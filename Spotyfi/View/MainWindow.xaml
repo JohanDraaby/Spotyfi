@@ -14,6 +14,7 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
+        <Frame x:Name="mainFrame" Margin="10,65,10,100" Source="/Spotyfi;component/FrontPageView.xaml"/>
 
         <!-- TopBar Grid -->
         <Grid Height="60" VerticalAlignment="Top">

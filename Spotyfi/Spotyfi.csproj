@@ -81,6 +81,11 @@
     <Compile Include="artist.cs">
       <DependentUpon>SpotyfiDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\FrontPageViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="View\FrontPageView.xaml.cs">
+      <DependentUpon>FrontPageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="song.cs">
       <DependentUpon>SpotyfiDatabase.tt</DependentUpon>
     </Compile>
@@ -99,7 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpotyfiDatabase.edmx</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\FrontPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -107,7 +116,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -162,9 +171,7 @@
     <Resource Include="Images\NoCover.png" />
     <Resource Include="Images\SpotyfiLogo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\View\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
