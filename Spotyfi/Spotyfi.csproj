@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="CreateDatabase.sql" />
     <Content Include="CreateDummyData.sql" />
+    <Resource Include="Images\SpotyfiLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

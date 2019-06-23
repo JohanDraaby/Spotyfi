@@ -25,7 +25,7 @@
                 <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#FFB2B2B2" Height="30" Width="36" RenderTransformOrigin="0.931,0.5"/>
             </Grid>
 
-            <Image x:Name="spotyfiLogo" HorizontalAlignment="Left" Source="C:\Users\zerotion\source\repos\Spotyfi\Spotyfi\bin\Debug\SpotyfiLogo.png" Margin="6,6,0,28" Width="25"/>
+            <Image x:Name="spotyfiLogo" HorizontalAlignment="Left" Source="/Images/SpotyfiLogo.png" Margin="6,6,0,28" Width="25"/>
             <materialDesign:PackIcon Kind="LessThan" Foreground="#FFB2B2B2" Margin="42,5,0,0" Height="50" RenderTransformOrigin="0.5,0.5" Width="34" >
                 <materialDesign:PackIcon.RenderTransform>
                     <TransformGroup>
@@ -50,8 +50,10 @@
 
         </Grid>
 
-        <Grid Height="180" VerticalAlignment="Bottom">
-            
+        <Grid Height="150" VerticalAlignment="Bottom">
+
+            <Image x:Name="musicCover" Height="125" Width="125" Margin="45,12,1230,13" OpacityMask="White"/>
+
         </Grid>
     </Grid>
 
