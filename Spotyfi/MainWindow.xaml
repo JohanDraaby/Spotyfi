@@ -50,9 +50,22 @@
 
         </Grid>
 
-        <Grid Height="150" VerticalAlignment="Bottom">
+        <Grid Height="95" VerticalAlignment="Bottom" Background="#FF323232">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="759*"/>
+                <ColumnDefinition Width="641*"/>
+            </Grid.ColumnDefinitions>
 
-            <Image x:Name="musicCover" Height="125" Width="125" Margin="45,12,1230,13" OpacityMask="White"/>
+            <Image x:Name="musicCover" Margin="10,15,678.667,15" OpacityMask="White" Source="/Images/NoCover.png"/>
+            <Label x:Name="songNameDisplay" Margin="91,15,534.667,44" Foreground="#DDECECEC" Content="Unknown" FontSize="16"/>
+            <Label x:Name="songArtistDisplay" Margin="91,51,591.667,15" Foreground="#FFB2B2B2" Content="Unknown"/>
+
+            <materialDesign:PackIcon Kind="PlayCircleOutline" VerticalAlignment="Center" HorizontalAlignment="Center" Height="54" Margin="671,7,30,34" Width="58" Foreground="#FFB2B2B2"/>
+            <materialDesign:PackIcon Kind="SkipNext" VerticalAlignment="Center" Margin="738,15,0,42" Height="38" Width="40" Foreground="#FFB2B2B2" Grid.ColumnSpan="2"/>
+            <materialDesign:PackIcon Kind="SkipPrevious" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="622,15,97,42" Foreground="#FFB2B2B2" Height="38" Width="40"/>
+
+            <materialDesign:PackIcon Kind="VolumeHigh" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,25,96,35" Height="35" Width="24" Foreground="#FFB2B2B2"/>
+            <Slider Width="72" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,33,10,42" Foreground="#FFB2B2B2"/>
 
         </Grid>
     </Grid>
