@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="spotyfiModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="album">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="64" />
+          <Property Name="description" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="album_artist">
+          <Key>
+            <PropertyRef Name="album_id" />
+            <PropertyRef Name="artist_id" />
+          </Key>
+          <Property Name="album_id" Type="int" Nullable="false" />
+          <Property Name="artist_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="album_song">
+          <Key>
+            <PropertyRef Name="album_id" />
+            <PropertyRef Name="song_id" />
+          </Key>
+          <Property Name="album_id" Type="int" Nullable="false" />
+          <Property Name="song_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="artist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="real_name" Type="varchar" MaxLength="256" />
+          <Property Name="artist_name" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="song">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="64" />
+          <Property Name="path" Type="varchar" MaxLength="256" />
+          <Property Name="track_duration_seconds" Type="int" />
+        </EntityType>
+        <EntityType Name="song_artist">
+          <Key>
+            <PropertyRef Name="song_id" />
+            <PropertyRef Name="artist_id" />
+          </Key>
+          <Property Name="song_id" Type="int" Nullable="false" />
+          <Property Name="artist_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="album_artist_ibfk_1">
+          <End Role="album" Type="Self.album" Multiplicity="1" />
+          <End Role="album_artist" Type="Self.album_artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="album">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="album_artist">
+              <PropertyRef Name="album_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="album_artist_ibfk_2">
+          <End Role="artist" Type="Self.artist" Multiplicity="1" />
+          <End Role="album_artist" Type="Self.album_artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="artist">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="album_artist">
+              <PropertyRef Name="artist_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="album_song_ibfk_1">
+          <End Role="album" Type="Self.album" Multiplicity="1" />
+          <End Role="album_song" Type="Self.album_song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="album">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="album_song">
+              <PropertyRef Name="album_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="album_song_ibfk_2">
+          <End Role="song" Type="Self.song" Multiplicity="1" />
+          <End Role="album_song" Type="Self.album_song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="song">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="album_song">
+              <PropertyRef Name="song_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="song_artist_ibfk_1">
+          <End Role="song" Type="Self.song" Multiplicity="1" />
+          <End Role="song_artist" Type="Self.song_artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="song">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="song_artist">
+              <PropertyRef Name="song_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="song_artist_ibfk_2">
+          <End Role="artist" Type="Self.artist" Multiplicity="1" />
+          <End Role="song_artist" Type="Self.song_artist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="artist">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="song_artist">
+              <PropertyRef Name="artist_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="spotyfiModelStoreContainer">
+          <EntitySet Name="album" EntityType="Self.album" Schema="spotyfi" store:Type="Tables" />
+          <EntitySet Name="album_artist" EntityType="Self.album_artist" Schema="spotyfi" store:Type="Tables" />
+          <EntitySet Name="album_song" EntityType="Self.album_song" Schema="spotyfi" store:Type="Tables" />
+          <EntitySet Name="artist" EntityType="Self.artist" Schema="spotyfi" store:Type="Tables" />
+          <EntitySet Name="song" EntityType="Self.song" Schema="spotyfi" store:Type="Tables" />
+          <EntitySet Name="song_artist" EntityType="Self.song_artist" Schema="spotyfi" store:Type="Tables" />
+          <AssociationSet Name="album_artist_ibfk_1" Association="Self.album_artist_ibfk_1">
+            <End Role="album" EntitySet="album" />
+            <End Role="album_artist" EntitySet="album_artist" />
+          </AssociationSet>
+          <AssociationSet Name="album_artist_ibfk_2" Association="Self.album_artist_ibfk_2">
+            <End Role="artist" EntitySet="artist" />
+            <End Role="album_artist" EntitySet="album_artist" />
+          </AssociationSet>
+          <AssociationSet Name="album_song_ibfk_1" Association="Self.album_song_ibfk_1">
+            <End Role="album" EntitySet="album" />
+            <End Role="album_song" EntitySet="album_song" />
+          </AssociationSet>
+          <AssociationSet Name="album_song_ibfk_2" Association="Self.album_song_ibfk_2">
+            <End Role="song" EntitySet="song" />
+            <End Role="album_song" EntitySet="album_song" />
+          </AssociationSet>
+          <AssociationSet Name="song_artist_ibfk_1" Association="Self.song_artist_ibfk_1">
+            <End Role="song" EntitySet="song" />
+            <End Role="song_artist" EntitySet="song_artist" />
+          </AssociationSet>
+          <AssociationSet Name="song_artist_ibfk_2" Association="Self.song_artist_ibfk_2">
+            <End Role="artist" EntitySet="artist" />
+            <End Role="song_artist" EntitySet="song_artist" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="spotyfiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="album">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="artists" Relationship="Self.album_artist" FromRole="album" ToRole="artist" />
+          <NavigationProperty Name="songs" Relationship="Self.album_song" FromRole="album" ToRole="song" />
+        </EntityType>
+        <EntityType Name="artist">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="real_name" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="artist_name" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="albums" Relationship="Self.album_artist" FromRole="artist" ToRole="album" />
+          <NavigationProperty Name="songs" Relationship="Self.song_artist" FromRole="artist" ToRole="song" />
+        </EntityType>
+        <EntityType Name="song">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="track_duration_seconds" Type="Int32" />
+          <NavigationProperty Name="albums" Relationship="Self.album_song" FromRole="song" ToRole="album" />
+          <NavigationProperty Name="artists" Relationship="Self.song_artist" FromRole="song" ToRole="artist" />
+        </EntityType>
+        <Association Name="album_artist">
+          <End Role="album" Type="Self.album" Multiplicity="*" />
+          <End Role="artist" Type="Self.artist" Multiplicity="*" />
+        </Association>
+        <Association Name="album_song">
+          <End Role="album" Type="Self.album" Multiplicity="*" />
+          <End Role="song" Type="Self.song" Multiplicity="*" />
+        </Association>
+        <Association Name="song_artist">
+          <End Role="song" Type="Self.song" Multiplicity="*" />
+          <End Role="artist" Type="Self.artist" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="spotyfiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="albums" EntityType="Self.album" />
+          <EntitySet Name="artists" EntityType="Self.artist" />
+          <EntitySet Name="songs" EntityType="Self.song" />
+          <AssociationSet Name="album_artist" Association="Self.album_artist">
+            <End Role="album" EntitySet="albums" />
+            <End Role="artist" EntitySet="artists" />
+          </AssociationSet>
+          <AssociationSet Name="album_song" Association="Self.album_song">
+            <End Role="album" EntitySet="albums" />
+            <End Role="song" EntitySet="songs" />
+          </AssociationSet>
+          <AssociationSet Name="song_artist" Association="Self.song_artist">
+            <End Role="song" EntitySet="songs" />
+            <End Role="artist" EntitySet="artists" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="spotyfiModelStoreContainer" CdmEntityContainer="spotyfiEntities">
+          <EntitySetMapping Name="albums">
+            <EntityTypeMapping TypeName="spotyfiModel.album">
+              <MappingFragment StoreEntitySet="album">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="artists">
+            <EntityTypeMapping TypeName="spotyfiModel.artist">
+              <MappingFragment StoreEntitySet="artist">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="real_name" ColumnName="real_name" />
+                <ScalarProperty Name="artist_name" ColumnName="artist_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="songs">
+            <EntityTypeMapping TypeName="spotyfiModel.song">
+              <MappingFragment StoreEntitySet="song">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="track_duration_seconds" ColumnName="track_duration_seconds" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="album_artist" TypeName="spotyfiModel.album_artist" StoreEntitySet="album_artist">
+            <EndProperty Name="album">
+              <ScalarProperty Name="id" ColumnName="album_id" />
+            </EndProperty>
+            <EndProperty Name="artist">
+              <ScalarProperty Name="id" ColumnName="artist_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="album_song" TypeName="spotyfiModel.album_song" StoreEntitySet="album_song">
+            <EndProperty Name="album">
+              <ScalarProperty Name="id" ColumnName="album_id" />
+            </EndProperty>
+            <EndProperty Name="song">
+              <ScalarProperty Name="id" ColumnName="song_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="song_artist" TypeName="spotyfiModel.song_artist" StoreEntitySet="song_artist">
+            <EndProperty Name="song">
+              <ScalarProperty Name="id" ColumnName="song_id" />
+            </EndProperty>
+            <EndProperty Name="artist">
+              <ScalarProperty Name="id" ColumnName="artist_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -68,6 +68,7 @@
             <Slider Width="72" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,33,10,42" Foreground="#FFB2B2B2"/>
 
         </Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="364,312,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
     </Grid>
 
 

@@ -24,5 +24,20 @@ namespace Spotyfi
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            spotyfiEntities _entities = new spotyfiEntities();
+            var artist = _entities.artists.Find(1);
+            var album = _entities.albums.Find(1);
+            var song = _entities.songs.Find(1);
+
+            MessageBox.Show(artist?.ToString());
+            MessageBox.Show(album?.ToString());
+            MessageBox.Show(song?.ToString());
+
+
+
+        }
     }
 }
