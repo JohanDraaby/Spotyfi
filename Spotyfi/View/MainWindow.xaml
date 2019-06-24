@@ -25,7 +25,7 @@
 
             <!-- Grid For window management -->
             <Grid Height="30" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Black">
-                <Button x:Name="buttonClose" Width="36" Background="{x:Null}" Margin="109,0,5,0" BorderBrush="{x:Null}" Command="{Binding CloseApp}">
+                <Button x:Name="ButtonClose" Width="36" Background="{x:Null}" Margin="109,0,5,0" BorderBrush="{x:Null}" Command="{Binding CloseApp}" Foreground="Black" Click="ButtonClose_Click">
                     <Button.DataContext>
                         <ViewModel:MainWindowViewModel/>
                     </Button.DataContext>
@@ -34,12 +34,9 @@
                 <Button x:Name="ButtonFullscreen" Width="36" Background="{x:Null}" BorderBrush="{x:Null}">
                     <materialDesign:PackIcon Kind="Fullscreen" Foreground="#FFB2B2B2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="30"/>
                 </Button>
-                <Button x:Name="ButtonMinimize" Width="36" Background="{x:Null}" Margin="5,0,109,0" BorderBrush="{x:Null}">
+                <Button x:Name="ButtonMinimize" Width="36" Background="{x:Null}" Margin="5,0,109,0" BorderBrush="{x:Null}" Click="ButtonMinimize_Click">
                     <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#FFB2B2B2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="30"/>
                 </Button>
-                <!--<materialDesign:PackIcon Kind="Clear" x:Name="closeButton" Foreground="#FFB2B2B2" HorizontalAlignment="Right" Height="30" Width="36"/>
-                <materialDesign:PackIcon Kind="Fullscreen" Foreground="#FFB2B2B2" HorizontalAlignment="Right" Margin="0,0,56,0" Height="30" Width="36"/>
-                <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#FFB2B2B2" Height="30" Width="36" RenderTransformOrigin="0.931,0.5"/>-->
             </Grid>
 
             <Image x:Name="spotyfiLogo" HorizontalAlignment="Left" Source="/Images/SpotyfiLogo.png" Margin="6,6,0,28" Width="25"/>

@@ -55,5 +55,22 @@ namespace Spotyfi
             var mwvm = (MainWindowViewModel) this.DataContext;
             mwvm.IsPlaying = !mwvm.IsPlaying;
         }
+
+        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void ButtonMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Minimized;
+            }
+            else if (this.WindowState == WindowState.Minimized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+        }
     }
 }
