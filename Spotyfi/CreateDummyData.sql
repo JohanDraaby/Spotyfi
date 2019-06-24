@@ -56,3 +56,15 @@ INSERT INTO album_artist(album_artist.album_id, album_artist.artist_id) VALUES (
 INSERT INTO album_artist(album_artist.album_id, album_artist.artist_id) VALUES (5,7);
 INSERT INTO album_artist(album_artist.album_id, album_artist.artist_id) VALUES (6,8);
 INSERT INTO album_artist(album_artist.album_id, album_artist.artist_id) VALUES (6,9);
+
+############################song_artist#######################################################################################
+
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (1, 1);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (2, 2);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (3, 3);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (4, 4);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (4, 5);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (4, 6);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (5, 7);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (6, 8);
+INSERT INTO song_artist(song_artist.song_id, song_artist.artist_id) VALUES (6, 9);

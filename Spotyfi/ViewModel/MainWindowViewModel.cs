@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using Spotyfi.Annotations;
@@ -88,7 +89,7 @@ namespace Spotyfi.ViewModel
         {
             CloseApp = new DelegateCommand(CloseSpotyfi);
             _mediaPlayer = new MediaPlayer();
-            _mediaPlayer.Open(new Uri(@"D:\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
+            _mediaPlayer.Open(new Uri(@"C:\Users\Velreine\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
             _mediaPlayer.Volume = 0.1;
 
             PropertyChanged += (sender, args) =>
@@ -114,7 +115,6 @@ namespace Spotyfi.ViewModel
                 }
 
             };
-
         }
 
 
