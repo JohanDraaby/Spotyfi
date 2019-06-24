@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -16,13 +17,54 @@ namespace Spotyfi.ViewModel
     public class MainWindowViewModel : INotifyPropertyChanged
     {
 
-        private MediaPlayer _mediaPlayer;
+        private readonly MediaPlayer _mediaPlayer;
+
+        private song _currentSong;
+
+        public song CurrentSong
+        {
+            get => _currentSong;
+            set
+            {
+                _currentSong = value;
+                OnPropertyChanged(nameof(CurrentSong));
+            }
+        }
+
+        private double _playerVolume = 1;
+
+        public double PlayerVolume
+        {
+            get => _playerVolume;
+            set
+            {
+                _playerVolume = value;
+                OnPropertyChanged(nameof(PlayerVolume));
+            }
+        }
+
+
+        private string _playButtonSource = "PlayCircleOutline";
+
+        public string PlayButtonSource
+        {
+            get => _playButtonSource;
+            set
+            {
+                _playButtonSource = value;
+                OnPropertyChanged(nameof(PlayButtonSource));
+            }
+        }
+
+
+
+
 
         private bool _isPlaying = false;
 
         public bool IsPlaying
         {
-            get { return _isPlaying; }
+            get => _isPlaying;
             set
             {
                 _isPlaying = value;
@@ -31,14 +73,6 @@ namespace Spotyfi.ViewModel
         }
 
         private ICommand _closeApp;
-
-        private ICommand _playSong;
-
-        public ICommand PlaySong
-        {
-            get { return _playSong; }
-            set { _playSong = value; }
-        }
 
         public ICommand CloseApp
         {
@@ -53,21 +87,53 @@ namespace Spotyfi.ViewModel
         public MainWindowViewModel()
         {
             CloseApp = new DelegateCommand(CloseSpotyfi);
-            _playSong = new DelegateCommand(PlaySongFunc);
             _mediaPlayer = new MediaPlayer();
+            _mediaPlayer.Open(new Uri(@"D:\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
+            _mediaPlayer.Volume = 0.1;
 
-            
+            PropertyChanged += (sender, args) =>
+            {
+                if (args.PropertyName == nameof(IsPlaying))
+                {
+                    if (!_isPlaying)
+                    {
+                        this.PlayButtonSource = "PlayCircleOutline";
+                    }
+                    else
+                    {
+                        this.PlayButtonSource = "PauseCircleOutline";
+                        
+                    }
+
+                    PlaySongFunc(null);
+                }
+
+                if (args.PropertyName == nameof(PlayerVolume))
+                {
+                    _mediaPlayer.Volume = PlayerVolume / 100;
+                }
+
+            };
 
         }
+
 
 
         //--------------------------------------------------------
 
         private void PlaySongFunc(object args)
         {
-            _mediaPlayer.Open(new Uri(@"D:\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
-            _mediaPlayer.Play();
-            _mediaPlayer.Volume = 20;
+
+            if (!_isPlaying)
+            {
+                _mediaPlayer.Pause();
+            }
+            else
+            {
+                _mediaPlayer.Play();
+            }
+
+
         }
 
 

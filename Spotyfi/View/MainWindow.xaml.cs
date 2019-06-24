@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Spotyfi.ViewModel;
 
 namespace Spotyfi
 {
@@ -46,6 +47,13 @@ namespace Spotyfi
             {
                 this.DragMove();
             }
+        }
+
+        private void ButtonPlay_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO this feels dirty?
+            var mwvm = (MainWindowViewModel) this.DataContext;
+            mwvm.IsPlaying = !mwvm.IsPlaying;
         }
     }
 }

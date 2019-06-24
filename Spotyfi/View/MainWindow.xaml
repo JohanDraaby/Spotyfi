@@ -21,7 +21,7 @@
         <Frame x:Name="mainFrame" Margin="10,65,10,100" NavigationUIVisibility="Hidden" Source="/Spotyfi;component/View/FrontPageView.xaml"/>
 
         <!-- TopBar Grid -->
-        <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown" Background="#00000000">
+        <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown" Background="#CCFF0000">
 
             <!-- Grid For window management -->
             <Grid Height="30" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Black">
@@ -77,8 +77,8 @@
             <Label x:Name="SongNameDisplay" Margin="91,15,534.667,44" Foreground="#DDECECEC" Content="Unknown" FontSize="16"/>
             <Label x:Name="SongArtistDisplay" Margin="91,51,591.667,15" Foreground="#FFB2B2B2" Content="Unknown"/>
 
-            <Button x:Name="ButtonPlay" Background="{x:Null}" BorderBrush="{x:Null}" Height="54" Width="58" Margin="671,7,30,34">
-                <materialDesign:PackIcon Kind="PlayCircleOutline" VerticalAlignment="Center" HorizontalAlignment="Center" Height="54" Width="58" Foreground="#FFB2B2B2"/>
+            <Button x:Name="ButtonPlay" Background="{x:Null}" BorderBrush="{x:Null}" Height="54" Width="58" Margin="671,7,30,34" Click="ButtonPlay_Click">
+                <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Height="54" Width="58" Foreground="#FFB2B2B2" Kind="{Binding PlayButtonSource}"/>
             </Button>
             <Button x:Name="ButtonSkipNext" Background="{x:Null}" BorderBrush="{x:Null}" Height="38" Width="40" Margin="738,15,622,42" Grid.ColumnSpan="2">
                 <materialDesign:PackIcon Kind="SkipNext" VerticalAlignment="Center" Height="38" Width="40" Foreground="#FFB2B2B2"/>
@@ -88,7 +88,7 @@
             </Button>
 
             <materialDesign:PackIcon Kind="VolumeHigh" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,25,96,35" Height="35" Width="24" Foreground="#FFB2B2B2"/>
-            <Slider Width="72" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,33,10,42" Foreground="#FFB2B2B2"/>
+            <Slider Width="72" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,33,10,42" Foreground="#FFB2B2B2" Minimum="1" Maximum="100" Value="{Binding PlayerVolume}"/>
 
         </Grid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="618,17,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Command="{Binding PlaySong}"/>
