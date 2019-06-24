@@ -2,6 +2,8 @@
 
 CREATE DATABASE IF NOT EXISTS `spotyfi`;
 
+USE `spotify`;
+
 DROP TABLE IF EXISTS album_artist;
 DROP TABLE IF EXISTS album_song;
 DROP TABLE IF EXISTS song_artist;
