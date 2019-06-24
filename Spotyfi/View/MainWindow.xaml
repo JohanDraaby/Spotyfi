@@ -14,11 +14,14 @@
             <GradientStop Color="#FF6E6E6E"/>
         </LinearGradientBrush>
     </Window.Background>
+    <Window.DataContext>
+        <ViewModel:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <Frame x:Name="mainFrame" Margin="10,65,10,100" NavigationUIVisibility="Hidden" Source="/Spotyfi;component/View/FrontPageView.xaml"/>
 
         <!-- TopBar Grid -->
-        <Grid Height="60" VerticalAlignment="Top">
+        <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown" Background="#00000000">
 
             <!-- Grid For window management -->
             <Grid Height="30" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Black">
@@ -88,7 +91,7 @@
             <Slider Width="72" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,33,10,42" Foreground="#FFB2B2B2"/>
 
         </Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="618,17,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="618,17,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Command="{Binding PlaySong}"/>
     </Grid>
 
 

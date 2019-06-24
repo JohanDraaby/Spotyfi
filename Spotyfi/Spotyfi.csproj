@@ -90,6 +90,7 @@
       <DependentUpon>SpotyfiDatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DelegateCommand.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\FrontPageViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="View\FrontPageView.xaml.cs">

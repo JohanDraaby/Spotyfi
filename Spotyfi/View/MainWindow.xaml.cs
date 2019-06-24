@@ -27,17 +27,25 @@ namespace Spotyfi
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            spotyfiEntities _entities = new spotyfiEntities();
+            /*spotyfiEntities _entities = new spotyfiEntities();
             var artist = _entities.artists.Find(1);
             var album = _entities.albums.Find(1);
             var song = _entities.songs.Find(1);
 
             MessageBox.Show(artist?.ToString());
             MessageBox.Show(album?.ToString());
-            MessageBox.Show(song?.ToString());
+            MessageBox.Show(song?.ToString());*/
 
 
 
+        }
+
+        private void TopBarGrid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
         }
     }
 }
