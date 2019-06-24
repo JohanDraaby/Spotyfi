@@ -4,11 +4,70 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Spotyfi"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="FrontPageView">
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="FrontPageView" Height="700" Width="1400">
 
-    <Grid>
-        
-    </Grid>
+
+
+    <ScrollViewer x:Name="ScrollViewerFrontPage" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
+        <Grid Height="1000">
+
+            <Label x:Name="LabelHome" Content="Home" Margin="35,94,-35,766" Foreground="White" FontWeight="Bold" FontSize="36"/>
+
+            <Grid Height="230" Margin="10,258,-10,494">
+                <Label x:Name="LabelRecentSuggestions" Content="Recent Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,-5,0,0"/>
+                <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="26,24,23,205"/>
+
+                <Grid Height="175" Width="175" Margin="26,30,599,25">
+                    <Image x:Name="ImageRecentAlbum1" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelRecentAlbum1" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription1" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+                <Grid Height="175" Width="175" Margin="220,30,406,25">
+                    <Image x:Name="ImageRecentAlbum2" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelRecentAlbum2" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription2" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+                <Grid Height="175" Width="175" Margin="413,30,212,25">
+                    <Image x:Name="ImageRecentAlbum3" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelRecentAlbum3" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription3" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+                <Grid Height="175" Width="175" Margin="606,30,18,25">
+                    <Image x:Name="ImageRecentAlbum4" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelRecentAlbum4" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription4" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+
+            </Grid>
+
+            <Grid Margin="0,397,0,112">
+                <Label x:Name="LabelPopSuggestions" Content="POP Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,116,0,0"/>
+                <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="26,24,23,205"/>
+
+                <Grid Height="175" Width="175" Margin="26,30,599,25">
+                    <Image x:Name="ImagePopAlbum1" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelPopAlbum1" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelPopDiscription1" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+                <Grid Height="175" Width="175" Margin="220,30,406,25">
+                    <Image x:Name="ImagePopAlbum2" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelPopAlbum2" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelPopDiscription2" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+                <Grid Height="175" Width="175" Margin="413,30,212,25">
+                    <Image x:Name="ImagePopAlbum3" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelPopAlbum3" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelPopDiscription3" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+                <Grid Height="175" Width="175" Margin="606,30,18,25">
+                    <Image x:Name="ImagePopAlbum4" Height="175" Width="175" Source="/Images/NoCover.png"/>
+                    <Label x:Name="LabelPopAlbum4" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelPopDiscription4" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                </Grid>
+            </Grid>
+
+
+        </Grid>
+    </ScrollViewer>
 </Page>
