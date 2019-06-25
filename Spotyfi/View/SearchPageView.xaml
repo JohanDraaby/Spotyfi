@@ -1,0 +1,55 @@
+﻿<Page x:Class="Spotyfi.View.SearchPageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Spotyfi.View"
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="SearchPageView" Width="1400" Height="810">
+
+
+
+    <ScrollViewer>
+        <Grid>
+            <Grid Height="360" VerticalAlignment="Top" Background="#7FD86666">
+                <Grid Width="400" HorizontalAlignment="Left">
+                    <Label Content="Top Result" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold" Margin="110,0,100,298" />
+                    <Image x:Name="ImageTopResult" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
+                    <Label x:Name="LabelTopResultName" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="87,0,117,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                </Grid>
+                <Grid Margin="405,0,0,0">
+                    <Grid Width="300" Margin="3,0,575,0">
+                        <Label Content="Featured" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold" Margin="82,0,80,298" Width="138" />
+                        <Image x:Name="ImageFeatured1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
+                        <Label x:Name="LabelFeaturedName1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                    </Grid>
+                    <Grid Width="300" Margin="317,0,261,0">
+                        <Image x:Name="ImageFeatured2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
+                        <Label x:Name="LabelFeaturedName2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                    </Grid>
+                    <Grid Width="300" Margin="679,0,-1,0">
+                        <Image x:Name="ImageFeatured3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
+                        <Label x:Name="LabelFeaturedName3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </Grid>
+    </ScrollViewer>
+</Page>
