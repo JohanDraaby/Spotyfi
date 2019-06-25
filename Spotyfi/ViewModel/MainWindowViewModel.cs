@@ -106,14 +106,6 @@ namespace Spotyfi.ViewModel
                 }
 
             };
-
-            var x = Search.For("tunak");
-            var m = x.Item2.FirstOrDefault();
-
-            if (m != null)
-                MessageBox.Show(m.image_path);
-
-
         }
 
 

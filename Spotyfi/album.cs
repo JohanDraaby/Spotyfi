@@ -8,7 +8,10 @@
 //------------------------------------------------------------------------------
 
 using System.ComponentModel;
+using System.IO;
+using System.Net;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using Spotyfi.Annotations;
 
 namespace Spotyfi
@@ -65,7 +68,13 @@ namespace Spotyfi
             get => _imagePath;
             set
             {
-                _imagePath = value; 
+                var file = Environment.CurrentDirectory + value;
+                if(File.Exists(file))
+                    _imagePath = value;
+                else
+                {
+                    _imagePath = "/Images/NoCover.png";
+                }
                 OnPropertyChanged(nameof(image_path));
             }
         }

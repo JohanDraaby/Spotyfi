@@ -29,12 +29,13 @@ INSERT INTO artist(`id`, artist.real_name, artist.artist_name) VALUES (9, 'Khali
 
 ##########################ALBUMS###########################################################################################
 
-INSERT INTO album(album.id, album.name, album.description) VALUES(1, 'Tunak Tunak Tun', 'N/A');
-INSERT INTO album(album.id, album.name, album.description) VALUES(2, 'The Eminem Show', 'N/A');
-INSERT INTO album(album.id, album.name, album.description) VALUES(3, 'Fallen', 'N/A');
-INSERT INTO album(album.id, album.name, album.description) VALUES(4, 'Trials and Tribulations', 'N/A');
-INSERT INTO album(album.id, album.name, album.description) VALUES(5, 'My Beautiful Dark Twisted Fantasy', 'N/A');
-INSERT INTO album(album.id, album.name, album.description) VALUES(6, 'Spider-Man: Into the Spider-Verse', 'N/A');
+INSERT INTO `album` (`id`, `name`, `description`, `image_path`) VALUES
+	(1, 'Tunak Tunak Tun', 'N/A', '/Images/Albums/tunaktuncover.jfif'),
+	(2, 'The Eminem Show', 'N/A', '/Images/Albums/the-eminem-show-cover.jpg'),
+	(3, 'Fallen', 'N/A', '/Images/Albums/fallen-evanescence-cover.jpg'),
+	(4, 'Trials and Tribulations', 'N/A', '/Images/Albums/trials-and-tribulations-cover.jpg'),
+	(5, 'My Beautiful Dark Twisted Fantasy', 'N/A', '/Images/Albums/my-beautiful-dark-twisted-fantasy-cover.jpg'),
+	(6, 'Spider-Man: Into the Spider-Verse', 'N/A', '/Images/Albums/spider-man-into-the-spider-verse-cover.jpg');
 
 ##########################album_song########################################################################################
 
