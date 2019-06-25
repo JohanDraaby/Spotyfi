@@ -24,15 +24,11 @@ namespace Spotyfi
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
+        public string image_path { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<artist> artists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<song> songs { get; set; }
-
-        public override string ToString()
-        {
-            return $"{nameof(id)}:{id} {nameof(name)}:{name} {nameof(description)}:{description}";
-        }
     }
 }

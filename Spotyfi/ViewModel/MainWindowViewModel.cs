@@ -73,21 +73,12 @@ namespace Spotyfi.ViewModel
             }
         }
 
-        private ICommand _closeApp;
-
-        public ICommand CloseApp
-        {
-            get { return _closeApp; }
-            set { _closeApp = value; }
-        }
-
-
+        
         //--------------------------------------------------------
 
 
         public MainWindowViewModel()
         {
-            CloseApp = new DelegateCommand(CloseSpotyfi);
             _mediaPlayer = new MediaPlayer();
             _mediaPlayer.Open(new Uri(@"C:\Users\Velreine\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
             _mediaPlayer.Volume = 0.1;
@@ -115,6 +106,14 @@ namespace Spotyfi.ViewModel
                 }
 
             };
+
+            var x = Search.For("tunak");
+            var m = x.Item2.FirstOrDefault();
+
+            if (m != null)
+                MessageBox.Show(m.image_path);
+
+
         }
 
 
@@ -135,13 +134,6 @@ namespace Spotyfi.ViewModel
 
 
         }
-
-
-        private void CloseSpotyfi(object args)
-        {
-            Environment.Exit(0);
-        }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

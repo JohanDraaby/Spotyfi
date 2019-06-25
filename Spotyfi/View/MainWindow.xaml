@@ -25,10 +25,7 @@
 
             <!-- Grid For window management -->
             <Grid Height="30" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Black">
-                <Button x:Name="ButtonClose" Width="36" Background="{x:Null}" Margin="109,0,5,0" BorderBrush="{x:Null}" Command="{Binding CloseApp}" Foreground="Black" Click="ButtonClose_Click">
-                    <Button.DataContext>
-                        <ViewModel:MainWindowViewModel/>
-                    </Button.DataContext>
+                <Button x:Name="ButtonClose" Width="36" Background="{x:Null}" Margin="109,0,5,0" BorderBrush="{x:Null}" Foreground="Black" Click="ButtonClose_Click">
                     <materialDesign:PackIcon Kind="Clear" Foreground="#FFB2B2B2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="30"/>
                 </Button>
                 <Button x:Name="ButtonFullscreen" Width="36" Background="{x:Null}" BorderBrush="{x:Null}">

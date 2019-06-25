@@ -29,10 +29,5 @@ namespace Spotyfi
         public virtual ICollection<album> albums { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<song> songs { get; set; }
-
-        public override string ToString()
-        {
-            return $"{nameof(id)}:{id} {nameof(artist_name)}:{artist_name} {nameof(real_name)}:{real_name}";
-        }
     }
 }
