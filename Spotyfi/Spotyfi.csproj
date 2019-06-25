@@ -115,6 +115,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpotyfiDatabase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="View\SearchPageView.xaml.cs">
+      <DependentUpon>SearchPageView.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\FrontPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +134,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\SearchPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
