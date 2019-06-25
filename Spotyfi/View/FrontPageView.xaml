@@ -4,9 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Spotyfi"
+      xmlns:viewModel="clr-namespace:Spotyfi.ViewModel"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="FrontPageView" Height="1282.2" Width="1400">
-
+      Title="FrontPageView" Height="1357.2" Width="1400">
+    <Page.DataContext>
+        <viewModel:FrontPageViewModel/>
+    </Page.DataContext>
 
 
     <ScrollViewer x:Name="ScrollViewerFrontPage" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Margin="0,0,0,713.2">
@@ -15,35 +18,35 @@
             <Label x:Name="LabelHome" Content="Home" Margin="35,42,10,1392" Foreground="White" FontWeight="Bold" FontSize="36" RenderTransformOrigin="0.5,0.5"/>
 
             <!--Grid for the "recent" albums-->
-            <Grid Height="230" Margin="0,250,0,1024">
+            <Grid Margin="0,250,0,1000">
                 <Label x:Name="LabelRecentSuggestions" Content="Recent Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,-6,0,0"/>
                 <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="26,24,23,205"/>
 
                 <Grid Height="175" Width="175" Margin="26,30,599,25">
-                    <Image x:Name="ImageRecentAlbum1" Height="175" Width="175" Source="/Images/NoCover.png"/>
-                    <Label x:Name="LabelRecentAlbum1" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
-                    <Label x:Name="LabelRecentDiscription1" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                    <Image x:Name="ImageRecentAlbum1" Height="175" Width="175" Source="{Binding RecentAlbum1.image_path}"/>
+                    <Label x:Name="LabelRecentAlbum1" Content="{Binding RecentAlbum1.name}" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription1" Content="{Binding RecentAlbum1.description}" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
                 <Grid Height="175" Width="175" Margin="220,30,406,25">
                     <Image x:Name="ImageRecentAlbum2" Height="175" Width="175" Source="/Images/NoCover.png"/>
-                    <Label x:Name="LabelRecentAlbum2" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentAlbum2" Content="Unknown" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
                     <Label x:Name="LabelRecentDiscription2" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
                 <Grid Height="175" Width="175" Margin="413,30,212,25">
                     <Image x:Name="ImageRecentAlbum3" Height="175" Width="175" Source="/Images/NoCover.png"/>
-                    <Label x:Name="LabelRecentAlbum3" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentAlbum3" Content="Unknown" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
                     <Label x:Name="LabelRecentDiscription3" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
                 <Grid Height="175" Width="175" Margin="606,30,18,25">
                     <Image x:Name="ImageRecentAlbum4" Height="175" Width="175" Source="/Images/NoCover.png"/>
-                    <Label x:Name="LabelRecentAlbum4" Content="Unknown" Margin="0,167,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentAlbum4" Content="Unknown" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
                     <Label x:Name="LabelRecentDiscription4" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
 
             </Grid>
 
             <!--Grid for the "Pop" albums-->
-            <Grid Height="230" Margin="0,484,0,790">
+            <Grid Margin="0,514,0,726">
                 <Label x:Name="LabelPopSuggestions" Content="POP Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="32,-6,0,0"/>
                 <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="32,24,17,205"/>
 
@@ -70,7 +73,7 @@
             </Grid>
 
             <!--Grid for the "For You" albums-->
-            <Grid Height="230" Margin="0,716,0,558">
+            <Grid Margin="0,776,0,468">
                 <Label x:Name="LabelForYouSuggestions" Content="For You Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,-6,0,0"/>
                 <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="26,24,23,205"/>
 
@@ -99,4 +102,6 @@
 
         </Grid>
     </ScrollViewer>
+
 </Page>
+

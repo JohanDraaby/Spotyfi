@@ -7,28 +7,80 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Spotyfi.Annotations;
+
 namespace Spotyfi
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class album
+    public partial class album : INotifyPropertyChanged
     {
+        private int _id;
+        private string _name = "Unknown";
+        private string _description = "Bla bla bla";
+        private string _imagePath = "/Images/NoCover.png";
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public album()
         {
             this.artists = new HashSet<artist>();
             this.songs = new HashSet<song>();
         }
-    
-        public int id { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public string image_path { get; set; }
-    
+
+        public int id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(id));
+            }
+        }
+
+        public string name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged(nameof(name));
+            }
+        }
+
+        public string description
+        {
+            get => _description;
+            set
+            {
+                _description = value; 
+                OnPropertyChanged(nameof(description));
+            }
+        }
+
+        public string image_path
+        {
+            get => _imagePath;
+            set
+            {
+                _imagePath = value; 
+                OnPropertyChanged(nameof(image_path));
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<artist> artists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<song> songs { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
