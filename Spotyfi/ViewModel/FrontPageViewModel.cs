@@ -68,7 +68,7 @@ namespace Spotyfi.ViewModel
         public FrontPageViewModel()
         {
 
-            AssignRandomRecentAlbums();
+            // AssignRandomRecentAlbums();
             SubscribeToAlbumChanges();
 
 

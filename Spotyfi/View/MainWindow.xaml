@@ -18,7 +18,7 @@
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Frame x:Name="mainFrame" Margin="10,65,10,95" NavigationUIVisibility="Hidden" Source="/Spotyfi;component/View/FrontPageView.xaml"/>
+        <Frame x:Name="mainFrame" Margin="10,65,10,95" NavigationUIVisibility="Hidden" Source="/Spotyfi;component/View/SearchPageView.xaml"/>
 
         <!-- TopBar Grid -->
         <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown" Background="#00FF0000">

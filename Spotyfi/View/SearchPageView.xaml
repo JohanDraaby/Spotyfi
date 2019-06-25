@@ -5,34 +5,98 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Spotyfi.View"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="SearchPageView" Width="1400" Height="810">
+      Title="SearchPageView" Width="1400" Height="1800">
 
 
 
     <ScrollViewer>
         <Grid>
-            <Grid Height="360" VerticalAlignment="Top" Background="#7FD86666">
-                <Grid Width="400" HorizontalAlignment="Left">
-                    <Label Content="Top Result" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold" Margin="110,0,100,298" />
-                    <Image x:Name="ImageTopResult" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
-                    <Label x:Name="LabelTopResultName" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="87,0,117,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+            <StackPanel>
+
+                <!--Grid For  Fetured album, songs eller artists-->
+                <Grid Height="360" VerticalAlignment="Top" Background="#7FD86666">
+                    <Grid Width="400" HorizontalAlignment="Left">
+                        <Label Content="Top Result" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold" Margin="110,0,100,298" />
+                        <Image x:Name="ImageTopResult" Source="/Images/NoCover.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="220" Margin="87,83,93,57"/>
+                        <Label x:Name="LabelTopResultName" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="87,0,117,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                    </Grid>
+                    <Grid Margin="405,0,0,0">
+                        <Grid Width="300" Margin="3,0,575,0">
+                            <Label Content="Featured" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold" Margin="36,0,126,298" Width="138" />
+                            <Image x:Name="ImageFeatured1" Source="/Images/NoCover.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="220" Margin="36,83,44,57"/>
+                            <Label x:Name="LabelFeaturedName1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                        </Grid>
+                        <Grid Width="300" Margin="317,0,261,0">
+                            <Image x:Name="ImageFeatured2" Source="/Images/NoCover.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="220" Margin="37,83,43,57"/>
+                            <Label x:Name="LabelFeaturedName2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                        </Grid>
+                        <Grid Width="300" Margin="679,0,-1,0">
+                            <Image x:Name="ImageFeatured3" Source="/Images/NoCover.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="220" Margin="37,83,43,57"/>
+                            <Label x:Name="LabelFeaturedName3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <Grid Margin="405,0,0,0">
-                    <Grid Width="300" Margin="3,0,575,0">
-                        <Label Content="Featured" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold" Margin="82,0,80,298" Width="138" />
-                        <Image x:Name="ImageFeatured1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
-                        <Label x:Name="LabelFeaturedName1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+
+
+                <Grid Height="360" Margin="0,25,0,0">
+                    <Grid Width="691" HorizontalAlignment="Left" Background="#7F6BACD1">
+                        <StackPanel>
+                            <Label Content="Songs" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                            <Rectangle Fill="#BF6E6E6E" Height="0.5" Width="645"/>
+                            <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Grid>
+                                    <Grid Width="345" HorizontalAlignment="Left">
+                                        <Image x:Name="ImageSongCover1" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    </Grid>
+                                    <Grid Width="345" HorizontalAlignment="Right">
+                                        <Image x:Name="ImageSongCover2" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Grid Width="345" HorizontalAlignment="Left">
+                                    <Image x:Name="ImageSongCover3" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                </Grid>
+                                <Grid Width="345" HorizontalAlignment="Right">
+                                    <Image x:Name="ImageSongCover4" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+
                     </Grid>
-                    <Grid Width="300" Margin="317,0,261,0">
-                        <Image x:Name="ImageFeatured2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
-                        <Label x:Name="LabelFeaturedName2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
-                    </Grid>
-                    <Grid Width="300" Margin="679,0,-1,0">
-                        <Image x:Name="ImageFeatured3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="230" Margin="-28,-26,198,166"/>
-                        <Label x:Name="LabelFeaturedName3" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="42" Width="196" Margin="37,0,67,10" Content="Unknown" Foreground="White" FontWeight="Bold" FontSize="20"/>
+                    <Grid Width="691" HorizontalAlignment="Right" Background="#7F6BC948">
+                        <StackPanel>
+                            <Label Content="Artists" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                            <Rectangle Fill="#BF6E6E6E" Height="0.5" Width="645"/>
+                            <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Grid>
+                                    <Grid Width="345" HorizontalAlignment="Left">
+                                        <Image x:Name="ImageArtistCover1" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    </Grid>
+                                    <Grid Width="345" HorizontalAlignment="Right">
+                                        <Image x:Name="ImageArtistCover2" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <Grid Width="345" HorizontalAlignment="Left">
+                                    <Image x:Name="ImageArtistCover3" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                </Grid>
+                                <Grid Width="345" HorizontalAlignment="Right">
+                                    <Image x:Name="ImageArtistCover4" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
                     </Grid>
                 </Grid>
-            </Grid>
 
 
 
@@ -48,8 +112,7 @@
 
 
 
-
-
+            </StackPanel>
         </Grid>
     </ScrollViewer>
 </Page>
