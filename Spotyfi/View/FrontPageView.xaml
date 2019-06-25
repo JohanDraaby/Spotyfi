@@ -5,17 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Spotyfi"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="FrontPageView" Height="2359.2" Width="1400">
+      Title="FrontPageView" Height="1282.2" Width="1400">
 
 
 
     <ScrollViewer x:Name="ScrollViewerFrontPage" CanContentScroll="True" VerticalScrollBarVisibility="Visible" Margin="0,0,0,713.2">
-        <Grid Height="1361" Width="1400">
+        <Grid Height="1486">
 
-            <Label x:Name="LabelHome" Content="Home" Margin="35,42,10,1127" Foreground="White" FontWeight="Bold" FontSize="36" RenderTransformOrigin="0.5,0.5"/>
+            <Label x:Name="LabelHome" Content="Home" Margin="35,42,10,1392" Foreground="White" FontWeight="Bold" FontSize="36" RenderTransformOrigin="0.5,0.5"/>
 
-            <Grid Height="230" Margin="10,250,-10,494">
-                <Label x:Name="LabelRecentSuggestions" Content="Recent Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,-5,0,0"/>
+            <Grid Height="230" Margin="0,250,0,1024">
+                <Label x:Name="LabelRecentSuggestions" Content="Recent Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,-6,0,0"/>
                 <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="26,24,23,205"/>
 
                 <Grid Height="175" Width="175" Margin="26,30,599,25">
@@ -41,9 +41,9 @@
 
             </Grid>
 
-            <Grid Margin="0,400,0,112">
-                <Label x:Name="LabelPopSuggestions" Content="POP Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,305,0,0"/>
-                <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="26,24,23,205"/>
+            <Grid Height="230" Margin="0,484,0,790">
+                <Label x:Name="LabelPopSuggestions" Content="POP Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="32,-6,0,0"/>
+                <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="32,24,17,205"/>
 
                 <Grid Height="175" Width="175" Margin="26,30,599,25">
                     <Image x:Name="ImagePopAlbum1" Height="175" Width="175" Source="/Images/NoCover.png"/>
@@ -67,8 +67,8 @@
                 </Grid>
             </Grid>
 
-            <Grid Margin="0,900,0,112">
-                <Label x:Name="LabelForYouSuggestions" Content="For You Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,54,0,0"/>
+            <Grid Height="230" Margin="0,716,0,558">
+                <Label x:Name="LabelForYouSuggestions" Content="For You Albums" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Foreground="White" FontWeight="Bold" Margin="26,-6,0,0"/>
                 <Rectangle Fill="#BF6E6E6E" Height="0.5" Margin="26,24,23,205"/>
 
                 <Grid Height="175" Width="175" Margin="26,30,599,25">
