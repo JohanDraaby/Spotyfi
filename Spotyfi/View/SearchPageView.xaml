@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Spotyfi.View"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="SearchPageView" Width="1400" Height="636">
+      Title="SearchPageView" Width="1400" Height="640">
 
 
 
