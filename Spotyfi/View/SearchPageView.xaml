@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Spotyfi.View"
       mc:Ignorable="d" d:DesignWidth="800"
-      Title="SearchPageView" Width="1400" Height="1800">
+      Title="SearchPageView" Width="1400" Height="636">
 
 
 
@@ -99,6 +99,34 @@
                 </Grid>
 
 
+                <Grid Height="360" Margin="0,25,0,0" HorizontalAlignment="Center" Background="#7C8E2EB2">
+                    <StackPanel>
+                        <Label Content="Artists" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <Rectangle Fill="#BF6E6E6E" Height="0.5" Width="645"/>
+                        <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Grid>
+                                <Grid Width="345" HorizontalAlignment="Left">
+                                    <Image x:Name="ImageAlbumCover1" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                </Grid>
+                                <Grid Width="345" HorizontalAlignment="Right">
+                                    <Image x:Name="ImageAlbumCover2" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Grid Width="345" HorizontalAlignment="Left">
+                                <Image x:Name="ImageAlbumCover3" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                            </Grid>
+                            <Grid Width="345" HorizontalAlignment="Right">
+                                <Image x:Name="ImageAlbumCover4" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
 
 
 
