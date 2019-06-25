@@ -12,6 +12,8 @@ namespace Spotyfi.ViewModel
 {
     public class FrontPageViewModel : INotifyPropertyChanged
     {
+
+        #region recentAlbumProperties
         private album _recentAlbum1 = new album();
 
         public album RecentAlbum1
@@ -59,29 +61,41 @@ namespace Spotyfi.ViewModel
                 OnPropertyChanged(nameof(RecentAlbum4));
             }
         }
-
+        #endregion
 
 
 
         public FrontPageViewModel()
         {
-            
-            var searchResults = Search.For("tunak");
-            var tunakAlbum = searchResults.Item2.FirstOrDefault();
 
-            if (tunakAlbum != null)
-            {
-                RecentAlbum1 = tunakAlbum;
-            }
+            AssignRandomRecentAlbums();
+            SubscribeToAlbumChanges();
 
+
+        }
+
+        private void AssignRandomRecentAlbums()
+        {
+            var searchResults = Search.For("");
+
+            Random rng = new Random();
+
+            // Assign random recent albums.
+            RecentAlbum1 = searchResults.Item2[rng.Next(0, searchResults.Item2.Count)];
+            RecentAlbum2 = searchResults.Item2[rng.Next(0, searchResults.Item2.Count)];
+            RecentAlbum3 = searchResults.Item2[rng.Next(0, searchResults.Item2.Count)];
+            RecentAlbum4 = searchResults.Item2[rng.Next(0, searchResults.Item2.Count)];
+        }
+
+        private void SubscribeToAlbumChanges()
+        {
             // Can subscribe to an Albums PropertyChanged event and call this.OnPropertyChanged with the name of 
             // the changed album property.
             // this way we're notifying the ViewModel of the change.
             RecentAlbum1.PropertyChanged += (sender, args) => { this.OnPropertyChanged(nameof(RecentAlbum1)); };
-
-            // To see this works.
-            RecentAlbum1.name += " TEST";
-
+            RecentAlbum2.PropertyChanged += (sender, args) => { this.OnPropertyChanged(nameof(RecentAlbum2)); };
+            RecentAlbum3.PropertyChanged += (sender, args) => { this.OnPropertyChanged(nameof(RecentAlbum3)); };
+            RecentAlbum4.PropertyChanged += (sender, args) => { this.OnPropertyChanged(nameof(RecentAlbum4)); };
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

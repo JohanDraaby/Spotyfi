@@ -28,19 +28,19 @@
                     <Label x:Name="LabelRecentDiscription1" Content="{Binding RecentAlbum1.description}" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
                 <Grid Height="175" Width="175" Margin="220,30,406,25">
-                    <Image x:Name="ImageRecentAlbum2" Height="175" Width="175" Source="/Images/NoCover.png"/>
-                    <Label x:Name="LabelRecentAlbum2" Content="Unknown" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
-                    <Label x:Name="LabelRecentDiscription2" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                    <Image x:Name="ImageRecentAlbum2" Height="175" Width="175" Source="{Binding RecentAlbum2.image_path}"/>
+                    <Label x:Name="LabelRecentAlbum2" Content="{Binding RecentAlbum2.name}" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription2" Content="{Binding RecentAlbum2.description}" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
                 <Grid Height="175" Width="175" Margin="413,30,212,25">
-                    <Image x:Name="ImageRecentAlbum3" Height="175" Width="175" Source="/Images/NoCover.png"/>
-                    <Label x:Name="LabelRecentAlbum3" Content="Unknown" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
-                    <Label x:Name="LabelRecentDiscription3" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                    <Image x:Name="ImageRecentAlbum3" Height="175" Width="175" Source="{Binding RecentAlbum3.image_path}"/>
+                    <Label x:Name="LabelRecentAlbum3" Content="{Binding RecentAlbum3.name}" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription3" Content="{Binding RecentAlbum3.description}" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
                 <Grid Height="175" Width="175" Margin="606,30,18,25">
-                    <Image x:Name="ImageRecentAlbum4" Height="175" Width="175" Source="/Images/NoCover.png"/>
-                    <Label x:Name="LabelRecentAlbum4" Content="Unknown" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
-                    <Label x:Name="LabelRecentDiscription4" Content="Bla Bla Bla Bla Bla" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
+                    <Image x:Name="ImageRecentAlbum4" Height="175" Width="175" Source="{Binding RecentAlbum4.image_path}"/>
+                    <Label x:Name="LabelRecentAlbum4" Content="{Binding RecentAlbum4.name}" Margin="0,170,0,-39" FontSize="9" Foreground="White" FontWeight="Bold"/>
+                    <Label x:Name="LabelRecentDiscription4" Content="{Binding RecentAlbum4.description}" Margin="0,184,0,-29" FontSize="7" Foreground="White"/>
                 </Grid>
 
             </Grid>
