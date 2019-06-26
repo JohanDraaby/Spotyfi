@@ -14,7 +14,7 @@
             <StackPanel>
 
                 <!--Grid For  Fetured album, songs eller artists-->
-                <Grid Height="360" VerticalAlignment="Top" Background="#7FD86666">
+                <Grid Height="360" VerticalAlignment="Top">
                     <Grid Width="400" HorizontalAlignment="Left">
                         <Label Content="Top Result" HorizontalAlignment="Center" Foreground="White" FontSize="36" FontWeight="Bold" Margin="110,0,100,298" />
                         <Image x:Name="ImageTopResult" Source="/Images/NoCover.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="220" Width="220" Margin="87,83,93,57"/>
@@ -39,7 +39,7 @@
 
 
                 <Grid Height="360" Margin="0,25,0,0">
-                    <Grid Width="691" HorizontalAlignment="Left" Background="#7F6BACD1">
+                    <Grid Width="691" HorizontalAlignment="Left">
                         <StackPanel>
                             <Label Content="Songs" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                             <Rectangle Fill="#BF6E6E6E" Height="0.5" Width="645"/>
@@ -68,7 +68,7 @@
                         </StackPanel>
 
                     </Grid>
-                    <Grid Width="691" HorizontalAlignment="Right" Background="#7F6BC948">
+                    <Grid Width="691" HorizontalAlignment="Right">
                         <StackPanel>
                             <Label Content="Artists" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                             <Rectangle Fill="#BF6E6E6E" Height="0.5" Width="645"/>
@@ -99,7 +99,7 @@
                 </Grid>
 
 
-                <Grid Height="360" Margin="0,25,0,0" HorizontalAlignment="Center" Background="#7C8E2EB2">
+                <Grid Height="360" Margin="0,25,0,0" HorizontalAlignment="Center">
                     <StackPanel>
                         <Label Content="Artists" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                         <Rectangle Fill="#BF6E6E6E" Height="0.5" Width="645"/>
