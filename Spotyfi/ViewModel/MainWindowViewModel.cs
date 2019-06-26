@@ -18,6 +18,19 @@ namespace Spotyfi.ViewModel
     public class MainWindowViewModel : INotifyPropertyChanged
     {
 
+        private string _mainFrameSource = "/Spotyfi;component/View/FrontPageView.xaml";
+
+        public string MainFrameSource
+        {
+            get => _mainFrameSource;
+            set
+            {
+                _mainFrameSource = value;
+                OnPropertyChanged(nameof(MainFrameSource));
+            }
+        }
+
+
         private readonly MediaPlayer _mediaPlayer;
 
         private song _currentSong;
@@ -115,6 +128,12 @@ namespace Spotyfi.ViewModel
                 if (args.PropertyName == nameof(PlayerVolume))
                 {
                     _mediaPlayer.Volume = PlayerVolume / 100;
+                }
+
+                if (args.PropertyName == nameof(SearchBox))
+                {
+                    //var m = Search.For(SearchBox);
+                    MainFrameSource = "/Spotyfi;component/View/SearchPageView.xaml";
                 }
 
             };

@@ -18,7 +18,7 @@
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Frame x:Name="mainFrame" Margin="10,65,10,95" NavigationUIVisibility="Hidden" Source="/Spotyfi;component/View/SearchPageView.xaml"/>
+        <Frame x:Name="mainFrame" Margin="10,65,10,95" NavigationUIVisibility="Hidden" Source="{Binding MainFrameSource}"/>
 
         <!-- TopBar Grid -->
         <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown" Background="#00FF0000">
@@ -57,7 +57,7 @@
                     </TransformGroup>
                 </materialDesign:PackIcon.RenderTransform>
             </materialDesign:PackIcon>
-            <TextBox x:Name="SearchBox" Width="149" Background="White" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Margin="138,18,1113,18" Text="{Binding SearchBox}" RenderTransformOrigin="0.5,0.5"/>
+            <TextBox x:Name="SearchBox" Width="149" Background="White" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Margin="138,18,1113,18" Text="{Binding SearchBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5"/>
 
         </Grid>
 
