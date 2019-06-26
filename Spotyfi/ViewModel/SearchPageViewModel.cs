@@ -13,12 +13,118 @@ namespace Spotyfi.ViewModel
     public class SearchPageViewModel : INotifyPropertyChanged
     {
 
+
+        private album _searchAlbumCover1;
+
+        public album SearchAlbumCover1
+        {
+            get { return _searchAlbumCover1; }
+            set
+            {
+                _searchAlbumCover1 = value;
+                OnPropertyChanged(nameof(SearchAlbumCover1));
+            }
+        }
+
+        private string _searchAlbumLabel1;
+
+        public string SearchAlbumLabel1
+        {
+            get { return _searchAlbumLabel1; }
+            set
+            {
+                _searchAlbumLabel1 = value;
+                OnPropertyChanged(nameof(SearchAlbumLabel1));
+            }
+        }
+
+        private album _searchAlbumCover2;
+
+        public album SearchAlbumCover2
+        {
+            get { return _searchAlbumCover2; }
+            set
+            {
+                _searchAlbumCover2 = value;
+                OnPropertyChanged(nameof(SearchAlbumCover2));
+            }
+        }
+
+        private string _searchAlbumLabel2;
+
+        public string SearchAlbumLabel2
+        {
+            get { return _searchAlbumLabel2; }
+            set
+            {
+                _searchAlbumLabel2 = value;
+                OnPropertyChanged(nameof(SearchAlbumLabel2));
+            }
+        }
+
+        private album _searchAlbumCover3;
+
+        public album SearchAlbumCover3
+        {
+            get { return _searchAlbumCover3; }
+            set
+            {
+                _searchAlbumCover3 = value;
+                OnPropertyChanged(nameof(SearchAlbumCover3));
+            }
+        }
+
+        private string _searchAlbumLabel3;
+
+        public string SearchAlbumLabel3
+        {
+            get { return _searchAlbumLabel3; }
+            set
+            {
+                _searchAlbumLabel3 = value;
+                OnPropertyChanged(nameof(SearchAlbumLabel3));
+            }
+        }
+
+        private album _searchAlbumCover4;
+
+        public album SearchAlbumCover4
+        {
+            get { return _searchAlbumCover4; }
+            set
+            {
+                _searchAlbumCover4 = value;
+                OnPropertyChanged(nameof(SearchAlbumCover4));
+            }
+        }
+
+        private string _searchAlbumLabel4;
+
+        public string SearchAlbumLabel4
+        {
+            get { return _searchAlbumLabel4; }
+            set
+            {
+                _searchAlbumLabel4 = value;
+                OnPropertyChanged(nameof(SearchAlbumLabel4));
+            }
+        }
+
+
+
+
+
+
         private album _searchSongCover1;
 
         public album SearchSongCover1
         {
             get { return _searchSongCover1; }
-            set { _searchSongCover1 = value; }
+            set
+            {
+                _searchSongCover1 = value;
+                OnPropertyChanged(nameof(SearchSongCover1));
+            }
         }
 
         private string _searchSongLabel1;
@@ -35,9 +141,12 @@ namespace Spotyfi.ViewModel
         public album SearchSongCover2
         {
             get { return _searchSongCover2; }
-            set { _searchSongCover2 = value; }
+            set
+            {
+                _searchSongCover2 = value;
+                OnPropertyChanged(nameof(SearchSongCover2));
+            }
         }
-        private album _searchSongCover3;
 
         private string _searchSongLabel2;
 
@@ -46,10 +155,17 @@ namespace Spotyfi.ViewModel
             get { return _searchSongLabel2; }
             set { _searchSongLabel2 = value; }
         }
+
+        private album _searchSongCover3;
+
         public album SearchSongCover3
         {
             get { return _searchSongCover3; }
-            set { _searchSongCover3 = value; }
+            set
+            {
+                _searchSongCover3 = value;
+                OnPropertyChanged(nameof(SearchSongCover3));
+            }
         }
 
         private string _searchSongLabel3;
@@ -65,7 +181,11 @@ namespace Spotyfi.ViewModel
         public album SearchSongCover4
         {
             get { return _searchSongCover4; }
-            set { _searchSongCover4 = value; }
+            set
+            {
+                _searchSongCover4 = value;
+                OnPropertyChanged(nameof(SearchSongCover4));
+            }
         }
         private string _searchSongLabel4;
 
@@ -170,14 +290,76 @@ namespace Spotyfi.ViewModel
             AlbumResults = searchResults.Item2;
             ArtistResults = searchResults.Item3;
 
-            if (SongResults[0] != null)
+            if (SongResults.Count >= 1 && SongResults[0] != null)
                 SongResult1 = SongResults[0];
-            if (SongResults[1] != null)
+            if (SongResults.Count >= 2 && SongResults[1] != null)
                 SongResult2 = SongResults[1];
-            if (SongResults[2] != null)
+            if (SongResults.Count >= 3 && SongResults[2] != null)
                 SongResult3 = SongResults[2];
-            if (SongResults[3] != null)
+            if (SongResults.Count >= 4 && SongResults[3] != null)
                 SongResult4 = SongResults[3];
+
+            AssignSearchResult(searchResults);
+
+        }
+
+        private void AssignSearchResult(Tuple<List<song>, List<album>, List<artist>> searchResults)
+        {
+            if(searchResults.Item1.Count >= 1)
+            {
+                SearchSongCover1 = searchResults.Item1[0].albums.FirstOrDefault();
+                SearchSongLabel1 = searchResults.Item1[0].name;
+            }
+                
+            if (searchResults.Item1.Count >= 2)
+            {
+                SearchSongCover2 = searchResults.Item1[1].albums.FirstOrDefault();
+                SearchSongLabel2 = searchResults.Item1[1].name;
+            }
+                
+            if (searchResults.Item1.Count >= 3)
+            {
+                SearchSongCover3 = searchResults.Item1[2].albums.FirstOrDefault();
+                SearchSongLabel3 = searchResults.Item1[2].name;
+            }
+                
+            if (searchResults.Item1.Count >= 4)
+            {
+                SearchSongCover4 = searchResults.Item1[3].albums.FirstOrDefault();
+                SearchSongLabel4 = searchResults.Item1[3].name;
+            }
+
+            if (searchResults.Item2.Count >= 1)
+            {
+                SearchAlbumCover1 = searchResults.Item2[0];
+                SearchAlbumLabel1 = searchResults.Item2[0].name;
+            }
+
+            if (searchResults.Item2.Count >= 2)
+            {
+                SearchAlbumCover2 = searchResults.Item2[1];
+                SearchAlbumLabel2 = searchResults.Item2[1].name;
+            }
+
+            if (searchResults.Item2.Count >= 3)
+            {
+                SearchAlbumCover3 = searchResults.Item2[2];
+                SearchAlbumLabel3 = searchResults.Item2[2].name;
+            }
+
+            if (searchResults.Item2.Count >= 4)
+            {
+                SearchAlbumCover4 = searchResults.Item2[3];
+                SearchAlbumLabel4 = searchResults.Item2[3].name;
+            }
+
+
+
+
+
+
+
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

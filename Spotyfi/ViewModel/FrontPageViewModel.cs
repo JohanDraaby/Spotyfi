@@ -164,6 +164,8 @@ namespace Spotyfi.ViewModel
             SubscribeToAlbumChanges();
 
 
+
+
         }
 
         private void AssignRandomAlbums()

@@ -52,22 +52,22 @@
                             <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Grid>
                                     <Grid Width="345" HorizontalAlignment="Left">
-                                        <Image x:Name="ImageSongCover1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0" Source="{Binding SearchSongCover1}"/>
+                                        <Image x:Name="ImageSongCover1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0" Source="{Binding SearchSongCover1.image_path}"/>
                                         <Label Content="{Binding SearchSongLabel1}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                     </Grid>
                                     <Grid Width="345" HorizontalAlignment="Right">
-                                        <Image x:Name="ImageSongCover2" Source="{Binding SearchSongCover2}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Image x:Name="ImageSongCover2" Source="{Binding SearchSongCover2.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
                                         <Label Content="{Binding SearchSongLabel2}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                     </Grid>
                                 </Grid>
                             </Grid>
                             <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Grid Width="345" HorizontalAlignment="Left">
-                                    <Image x:Name="ImageSongCover3" Source="{Binding SearchSongCover3}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Image x:Name="ImageSongCover3" Source="{Binding SearchSongCover3.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
                                     <Label Content="{Binding SearchSongLabel3}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                 </Grid>
                                 <Grid Width="345" HorizontalAlignment="Right">
-                                    <Image x:Name="ImageSongCover4" Source="{Binding SearchSongCover4}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Image x:Name="ImageSongCover4" Source="{Binding SearchSongCover4.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
                                     <Label Content="{Binding SearchSongLabel4}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                 </Grid>
                             </Grid>
@@ -76,28 +76,28 @@
                     </Grid>
                     <Grid Width="691" HorizontalAlignment="Right">
                         <StackPanel>
-                            <Label Content="Artists" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                            <Label Content="Album" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                             <Rectangle Fill="#BF6E6E6E" Height="0.5" Width="645"/>
                             <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Grid>
                                     <Grid Width="345" HorizontalAlignment="Left">
-                                        <Image x:Name="ImageArtistCover1" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                        <Image x:Name="ImageArtistCover1" Source="{Binding SearchAlbumCover1.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Label Content="{Binding SearchAlbumLabel1}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                     </Grid>
                                     <Grid Width="345" HorizontalAlignment="Right">
-                                        <Image x:Name="ImageArtistCover2" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                        <Image x:Name="ImageArtistCover2" Source="{Binding SearchAlbumCover2.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Label Content="{Binding SearchAlbumLabel2}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                     </Grid>
                                 </Grid>
                             </Grid>
                             <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Grid Width="345" HorizontalAlignment="Left">
-                                    <Image x:Name="ImageArtistCover3" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    <Image x:Name="ImageArtistCover3" Source="{Binding SearchAlbumCover3.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="{Binding SearchAlbumLabel3}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                 </Grid>
                                 <Grid Width="345" HorizontalAlignment="Right">
-                                    <Image x:Name="ImageArtistCover4" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    <Image x:Name="ImageArtistCover4" Source="{Binding SearchAlbumCover4.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="{Binding SearchAlbumLabel4}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                 </Grid>
                             </Grid>
                         </StackPanel>
