@@ -18,10 +18,10 @@
         <ViewModel:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Frame x:Name="mainFrame" Margin="10,65,10,95" NavigationUIVisibility="Hidden" Source="{Binding MainFrameSource}"/>
+        <Frame x:Name="mainFrame" Margin="10,60,10,95" NavigationUIVisibility="Hidden" Source="{Binding MainFrameSource}"/>
 
         <!-- TopBar Grid -->
-        <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown" Background="#00FF0000">
+        <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown">
 
             <!-- Grid For window management -->
             <Grid Height="30" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Black">

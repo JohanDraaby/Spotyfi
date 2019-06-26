@@ -95,6 +95,9 @@
     <Compile Include="ViewModel\FrontPageViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\SearchPageViewModel.cs" />
+    <Compile Include="View\AlbumPageView.xaml.cs">
+      <DependentUpon>AlbumPageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FrontPageView.xaml.cs">
       <DependentUpon>FrontPageView.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
     <Compile Include="View\SearchPageView.xaml.cs">
       <DependentUpon>SearchPageView.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AlbumPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FrontPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -18,7 +18,7 @@ namespace Spotyfi.ViewModel
     public class MainWindowViewModel : INotifyPropertyChanged
     {
 
-        private string _mainFrameSource = "/Spotyfi;component/View/FrontPageView.xaml";
+        private string _mainFrameSource = "/Spotyfi;component/View/AlbumPageView.xaml";
 
         public string MainFrameSource
         {
