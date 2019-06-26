@@ -73,7 +73,19 @@ namespace Spotyfi.ViewModel
             }
         }
 
-        
+        private string _SearchBox;
+        public string SearchBox
+        {
+            get { return _SearchBox; }
+            set
+            {
+                _SearchBox = value;
+                OnPropertyChanged(nameof(SearchBox));
+            }
+        }
+
+
+
         //--------------------------------------------------------
 
 

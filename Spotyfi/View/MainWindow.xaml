@@ -57,7 +57,7 @@
                     </TransformGroup>
                 </materialDesign:PackIcon.RenderTransform>
             </materialDesign:PackIcon>
-            <TextBox x:Name="SearchBox" Width="149" Background="White" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Margin="138,18,1113,18" Text="Search"/>
+            <TextBox x:Name="SearchBox" Width="149" Background="White" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Margin="138,18,1113,18" Text="{Binding SearchBox}" RenderTransformOrigin="0.5,0.5"/>
 
         </Grid>
 
