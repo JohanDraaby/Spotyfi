@@ -134,6 +134,7 @@ namespace Spotyfi.ViewModel
                 {
                     //var m = Search.For(SearchBox);
                     MainFrameSource = "/Spotyfi;component/View/SearchPageView.xaml";
+                    SearchPageViewModel.RecentSearchInput = SearchBox;
                     if (SearchBox == "")
                     {
                         MainFrameSource = "/Spotyfi;component/View/FrontPageView.xaml";

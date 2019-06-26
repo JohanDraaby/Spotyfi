@@ -12,7 +12,6 @@ namespace Spotyfi.ViewModel
 {
     public class FrontPageViewModel : INotifyPropertyChanged
     {
-
         #region recentAlbumProperties
         private album _recentAlbum1 = new album();
 
@@ -155,6 +154,7 @@ namespace Spotyfi.ViewModel
                 OnPropertyChanged(nameof(ForYouAlbum4));
             }
         }
+
         #endregion
 
         public FrontPageViewModel()

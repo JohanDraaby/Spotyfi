@@ -83,7 +83,6 @@
 
             <materialDesign:PackIcon Kind="VolumeHigh" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,25,96,35" Height="35" Width="24" Foreground="#FFB2B2B2"/>
             <Slider Width="72" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,33,10,42" Foreground="#FFB2B2B2" Minimum="1" Maximum="100" Value="{Binding PlayerVolume}"/>
-
         </Grid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="618,17,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Command="{Binding PlaySong}"/>
     </Grid>

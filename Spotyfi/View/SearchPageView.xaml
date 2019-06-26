@@ -4,10 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Spotyfi.View"
+      xmlns:viewModel="clr-namespace:Spotyfi.ViewModel"
       mc:Ignorable="d" d:DesignWidth="800"
       Title="SearchPageView" Width="1400" Height="640">
+    <Page.Resources>
+        <JournalEntryListConverter x:Key="JournalEntryListConverter"/>
+    </Page.Resources>
 
-
+    <Page.DataContext>
+        <viewModel:SearchPageViewModel/>
+    </Page.DataContext>
 
     <ScrollViewer>
         <Grid>
@@ -46,23 +52,23 @@
                             <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Grid>
                                     <Grid Width="345" HorizontalAlignment="Left">
-                                        <Image x:Name="ImageSongCover1" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                        <Image x:Name="ImageSongCover1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0" Source="{Binding SearchSongCover1}"/>
+                                        <Label Content="{Binding SearchSongLabel1}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                     </Grid>
                                     <Grid Width="345" HorizontalAlignment="Right">
-                                        <Image x:Name="ImageSongCover2" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                        <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                        <Image x:Name="ImageSongCover2" Source="{Binding SearchSongCover2}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                        <Label Content="{Binding SearchSongLabel2}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                     </Grid>
                                 </Grid>
                             </Grid>
                             <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Grid Width="345" HorizontalAlignment="Left">
-                                    <Image x:Name="ImageSongCover3" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    <Image x:Name="ImageSongCover3" Source="{Binding SearchSongCover3}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="{Binding SearchSongLabel3}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                 </Grid>
                                 <Grid Width="345" HorizontalAlignment="Right">
-                                    <Image x:Name="ImageSongCover4" Source="/Images/NoCover.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                    <Label Content="Unknown" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
+                                    <Image x:Name="ImageSongCover4" Source="{Binding SearchSongCover4}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
+                                    <Label Content="{Binding SearchSongLabel4}" Height="30" Margin="122,70,22,50" Foreground="White" FontWeight="Bold"/>
                                 </Grid>
                             </Grid>
                         </StackPanel>
