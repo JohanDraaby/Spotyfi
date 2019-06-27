@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Threading;
 using Spotyfi.Annotations;
 using Spotyfi.Model;
 
@@ -30,6 +32,19 @@ namespace Spotyfi.ViewModel
             }
         }
 
+        private double _currentPositionMinutes;
+
+        public double CurrentPositionMinutes
+        {
+            get => _currentPositionMinutes;
+            set
+            {
+                _currentPositionMinutes = value;
+                OnPropertyChanged(nameof(CurrentPositionMinutes));
+            }
+        }
+
+        public MediaPlayer MediaPlayer => _mediaPlayer;
 
         private readonly MediaPlayer _mediaPlayer;
 
@@ -105,7 +120,27 @@ namespace Spotyfi.ViewModel
         public MainWindowViewModel()
         {
             _mediaPlayer = new MediaPlayer();
-            _mediaPlayer.Open(new Uri(@"C:\Users\Velreine\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
+
+            song myTestSong = new song();
+            myTestSong.name = "TESTER SONG";
+            myTestSong.path =
+                @"C:\Users\Velreine\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3";
+            album testAlbum = new album();
+            testAlbum.image_path = "/Images/Albums/tunaktuncover.jfif";
+            List<album> testAlbumList = new List<album>();
+            testAlbumList.Add(testAlbum);
+            myTestSong.albums = testAlbumList;
+            artist testArtist = new artist();
+            testArtist.artist_name = "TEST ARTIST 1";
+            testArtist.artist_name = "TEST ARTIST 2";
+            List<artist> testArtistList = new List<artist>();
+            testArtistList.Add(testArtist);
+            myTestSong.artists = testArtistList;
+
+            CurrentSong = myTestSong;
+
+            //_mediaPlayer.Open(new Uri(@"C:\Users\Velreine\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
+            _mediaPlayer.Open(new Uri(myTestSong.path));
             _mediaPlayer.Volume = 0.1;
 
             PropertyChanged += (sender, args) =>
@@ -141,9 +176,14 @@ namespace Spotyfi.ViewModel
 
                     }
                 }
-
             };
+
+           
+
+
+
         }
+
 
 
 

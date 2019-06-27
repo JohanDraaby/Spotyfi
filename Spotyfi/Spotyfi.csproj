@@ -89,6 +89,8 @@
     <Compile Include="artist.cs">
       <DependentUpon>SpotyfiDatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\AlbumsToImagePathConverter.cs" />
+    <Compile Include="Model\ArtistsToJoinedStringConverter.cs" />
     <Compile Include="Model\DelegateCommand.cs" />
     <Compile Include="Model\Search.cs" />
     <Compile Include="Properties\Annotations.cs" />

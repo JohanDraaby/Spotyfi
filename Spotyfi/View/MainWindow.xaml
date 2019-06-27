@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Spotyfi"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:ViewModel="clr-namespace:Spotyfi.ViewModel" x:Class="Spotyfi.MainWindow"
+        xmlns:ViewModel="clr-namespace:Spotyfi.ViewModel" xmlns:Model="clr-namespace:Spotyfi.Model" x:Class="Spotyfi.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1400" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <Model:AlbumsToImagePathConverter x:Key="AlbumsToImagePathConverter"/>
+        <Model:ArtistsToJoinedStringConverter x:Key="ArtistsToJoinedStringConverter"/>
+    </Window.Resources>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#D81E1E1E" Offset="0.383"/>
@@ -21,7 +25,7 @@
         <Frame x:Name="mainFrame" Margin="10,60,10,95" NavigationUIVisibility="Hidden" Source="{Binding MainFrameSource}"/>
 
         <!-- TopBar Grid -->
-        <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown">
+        <Grid x:Name="TopBarGrid" Height="60" VerticalAlignment="Top" MouseDown="TopBarGrid_MouseDown" Background="#72000000" Loaded="TopBarGrid_Loaded">
 
             <!-- Grid For window management -->
             <Grid Height="30" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Black">
@@ -58,6 +62,7 @@
                 </materialDesign:PackIcon.RenderTransform>
             </materialDesign:PackIcon>
             <TextBox x:Name="SearchBox" Width="149" Background="White" CaretBrush="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Margin="138,18,1113,18" Text="{Binding SearchBox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5"/>
+            <Image x:Name="RandomImage" HorizontalAlignment="Left" Height="32" Margin="367,10,0,0" VerticalAlignment="Top" Width="100" Source="https://picsum.photos/100/32"/>
 
         </Grid>
 
@@ -67,12 +72,12 @@
                 <ColumnDefinition Width="641*"/>
             </Grid.ColumnDefinitions>
 
-            <Image x:Name="MusicCover" Margin="10,15,678.667,15" OpacityMask="White" Source="/Images/NoCover.png"/>
-            <Label x:Name="SongNameDisplay" Margin="91,15,534.667,44" Foreground="#DDECECEC" Content="Unknown" FontSize="16"/>
-            <Label x:Name="SongArtistDisplay" Margin="91,51,591.667,15" Foreground="#FFB2B2B2" Content="Unknown"/>
+            <Image x:Name="MusicCover" Margin="10,15,678.667,15" OpacityMask="White" Source="{Binding CurrentSong.albums, Converter={StaticResource AlbumsToImagePathConverter}, FallbackValue=/Images/NoCover.png, Mode=OneWay}"/>
+            <Label x:Name="SongNameDisplay" Margin="91,15,534.667,44" Foreground="#DDECECEC" Content="{Binding CurrentSong.name, FallbackValue=Unknown}" FontSize="16"/>
+            <Label x:Name="SongArtistDisplay" Margin="91,51,591.667,15" Foreground="#FFB2B2B2" Content="{Binding CurrentSong.artists, Converter={StaticResource ArtistsToJoinedStringConverter}}"/>
 
             <Button x:Name="ButtonPlay" Background="{x:Null}" BorderBrush="{x:Null}" Height="54" Width="58" Margin="671,7,30,34" Click="ButtonPlay_Click">
-                <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Height="54" Width="58" Foreground="#FFB2B2B2" Kind="{Binding PlayButtonSource}"/>
+                <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Height="54" Width="58" Foreground="#FFB2B2B2" Kind="{Binding PlayButtonSource, FallbackValue=PlayCircleOutline}"/>
             </Button>
             <Button x:Name="ButtonSkipNext" Background="{x:Null}" BorderBrush="{x:Null}" Height="38" Width="40" Margin="738,15,622,42" Grid.ColumnSpan="2">
                 <materialDesign:PackIcon Kind="SkipNext" VerticalAlignment="Center" Height="38" Width="40" Foreground="#FFB2B2B2"/>
@@ -83,6 +88,7 @@
 
             <materialDesign:PackIcon Kind="VolumeHigh" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,25,96,35" Height="35" Width="24" Foreground="#FFB2B2B2"/>
             <Slider Width="72" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,33,10,42" Foreground="#FFB2B2B2" Minimum="1" Maximum="100" Value="{Binding PlayerVolume}"/>
+            <Label Content="{Binding CurrentPositionMinutes}" HorizontalAlignment="Left" Margin="507,54,0,0" VerticalAlignment="Top" Width="86"/>
         </Grid>
         <Button Content="Button" HorizontalAlignment="Left" Margin="618,17,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Command="{Binding PlaySong}"/>
     </Grid>

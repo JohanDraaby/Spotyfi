@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -72,5 +73,45 @@ namespace Spotyfi
                 this.WindowState = WindowState.Normal;
             }
         }
+
+        private void TopBarGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            Thread randomImageThread = new Thread(() =>
+            {
+
+                Random rng = new Random();
+
+                while (true)
+                {
+                    
+                    UpdateImageSource($"https://picsum.photos/100/32?random={rng.Next(0,100)}");
+
+                    
+                    Thread.Sleep(2500);
+                }
+
+            });
+
+            randomImageThread.Start();
+
+
+        }
+
+        private delegate void StringArgReturningVoidDelegate(string str);
+
+        private void UpdateImageSource(string source)
+        {
+            if (!Dispatcher.CheckAccess()) // CheckAccess returns true if you're on the dispatcher thread
+            {
+                Dispatcher.Invoke(new StringArgReturningVoidDelegate(UpdateImageSource), source);
+                return;
+            }
+            RandomImage.Source = new BitmapImage(new Uri(source));
+        }
+
+        
+
+
     }
 }
