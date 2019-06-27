@@ -131,10 +131,12 @@ namespace Spotyfi.ViewModel
             testAlbumList.Add(testAlbum);
             myTestSong.albums = testAlbumList;
             artist testArtist = new artist();
+            artist testArtist2 = new artist();
             testArtist.artist_name = "TEST ARTIST 1";
-            testArtist.artist_name = "TEST ARTIST 2";
+            testArtist2.artist_name = "TEST ARTIST 2";
             List<artist> testArtistList = new List<artist>();
             testArtistList.Add(testArtist);
+            testArtistList.Add(testArtist2);
             myTestSong.artists = testArtistList;
 
             CurrentSong = myTestSong;

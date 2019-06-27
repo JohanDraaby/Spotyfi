@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 using Spotyfi.Annotations;
 using Spotyfi.Model;
 
@@ -12,6 +14,17 @@ namespace Spotyfi.ViewModel
 {
     public class SearchPageViewModel : INotifyPropertyChanged
     {
+        private ICommand _playSongCommand;
+
+        public ICommand PlaySongCommand
+        {
+            get => _playSongCommand;
+            set
+            {
+                _playSongCommand = value;
+                OnPropertyChanged(nameof(PlaySongCommand));
+            }
+        }
 
 
         private album _searchAlbumCover1;
@@ -300,6 +313,23 @@ namespace Spotyfi.ViewModel
                 SongResult4 = SongResults[3];
 
             AssignSearchResult(searchResults);
+
+            PlaySongCommand = new DelegateCommand((args) =>
+            {
+                var songName = (string) args;
+
+
+
+                song foundSong = Search.For(songName).Item1[0];
+
+                if (foundSong != null)
+                {
+                    MessageBox.Show("I wanted to play: " + foundSong.name);
+                }
+
+
+            });
+
 
         }
 

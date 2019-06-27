@@ -19,7 +19,7 @@ namespace Spotyfi.Model
 
             foreach (artist artist in artists)
             {
-                sb.Append(artist.artist_name + " ");
+                sb.Append(artist.artist_name + ", ");
             }
 
             return sb.ToString();

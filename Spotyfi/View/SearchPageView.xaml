@@ -53,22 +53,22 @@
                                 <Grid>
                                     <Grid Width="345" HorizontalAlignment="Left">
                                         <Image x:Name="ImageSongCover1" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0" Source="{Binding SearchSongCover1.image_path}"/>
-                                        <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel1}" FontWeight="Bold"/>
+                                        <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel1}" FontWeight="Bold" CommandParameter="{Binding SearchSongLabel1}" Command="{Binding PlaySongCommand}"/>
                                     </Grid>
                                     <Grid Width="345" HorizontalAlignment="Right">
                                         <Image x:Name="ImageSongCover2" Source="{Binding SearchSongCover2.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                        <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel2}" FontWeight="Bold"/>
+                                        <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel2}" FontWeight="Bold" CommandParameter="{Binding SearchSongLabel2}" Command="{Binding PlaySongCommand}"/>
                                     </Grid>
                                 </Grid>
                             </Grid>
                             <Grid Width="691" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
                                 <Grid Width="345" HorizontalAlignment="Left">
                                     <Image x:Name="ImageSongCover3" Source="{Binding SearchSongCover3.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                    <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel3}" FontWeight="Bold"/>
+                                    <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel3}" FontWeight="Bold" CommandParameter="{Binding SearchSongLabel3}" Command="{Binding PlaySongCommand}"/>
                                 </Grid>
                                 <Grid Width="345" HorizontalAlignment="Right">
                                     <Image x:Name="ImageSongCover4" Source="{Binding SearchSongCover4.image_path}" VerticalAlignment="Center" HorizontalAlignment="Left" Height="100" Margin="20,20,0,0"/>
-                                    <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel4}" FontWeight="Bold"/>
+                                    <Button VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="122,35,22,15" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Content="{Binding SearchSongLabel4}" FontWeight="Bold" CommandParameter="{Binding SearchSongLabel4}" Command="{Binding PlaySongCommand}"/>
                                 </Grid>
                             </Grid>
                         </StackPanel>

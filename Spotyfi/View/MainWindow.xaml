@@ -74,7 +74,7 @@
 
             <Image x:Name="MusicCover" Margin="10,15,678.667,15" OpacityMask="White" Source="{Binding CurrentSong.albums, Converter={StaticResource AlbumsToImagePathConverter}, FallbackValue=/Images/NoCover.png, Mode=OneWay}"/>
             <Label x:Name="SongNameDisplay" Margin="91,15,534.667,44" Foreground="#DDECECEC" Content="{Binding CurrentSong.name, FallbackValue=Unknown}" FontSize="16"/>
-            <Label x:Name="SongArtistDisplay" Margin="91,51,591.667,15" Foreground="#FFB2B2B2" Content="{Binding CurrentSong.artists, Converter={StaticResource ArtistsToJoinedStringConverter}}"/>
+            <Label x:Name="SongArtistDisplay" Margin="91,51,265,15" Foreground="#FFB2B2B2" Content="{Binding CurrentSong.artists, Converter={StaticResource ArtistsToJoinedStringConverter}}"/>
 
             <Button x:Name="ButtonPlay" Background="{x:Null}" BorderBrush="{x:Null}" Height="54" Width="58" Margin="671,7,30,34" Click="ButtonPlay_Click">
                 <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Height="54" Width="58" Foreground="#FFB2B2B2" Kind="{Binding PlayButtonSource, FallbackValue=PlayCircleOutline}"/>
