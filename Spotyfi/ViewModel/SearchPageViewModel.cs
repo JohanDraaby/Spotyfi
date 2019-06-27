@@ -324,7 +324,10 @@ namespace Spotyfi.ViewModel
 
                 if (foundSong != null)
                 {
-                    MessageBox.Show("I wanted to play: " + foundSong.name);
+                    //MessageBox.Show("I wanted to play: " + foundSong.name);
+                    AudioPlayer.Stop();
+                    AudioPlayer.CurrentSong = foundSong;
+                    AudioPlayer.Play();
                 }
 
 

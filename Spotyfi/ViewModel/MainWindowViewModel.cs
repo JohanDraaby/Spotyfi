@@ -119,12 +119,13 @@ namespace Spotyfi.ViewModel
 
         public MainWindowViewModel()
         {
+
             _mediaPlayer = new MediaPlayer();
 
             song myTestSong = new song();
             myTestSong.name = "TESTER SONG";
             myTestSong.path =
-                @"C:\Users\Velreine\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3";
+                @"/Songs/tunak-tunak-tun-dahler-mendi.mp3";
             album testAlbum = new album();
             testAlbum.image_path = "/Images/Albums/tunaktuncover.jfif";
             List<album> testAlbumList = new List<album>();
@@ -142,26 +143,14 @@ namespace Spotyfi.ViewModel
             CurrentSong = myTestSong;
 
             //_mediaPlayer.Open(new Uri(@"C:\Users\Velreine\CloudStation\Uddannelse\ZBC\Projekter\Unity Spil Projekt\BackgroundMusic.mp3"));
-            _mediaPlayer.Open(new Uri(myTestSong.path));
-            _mediaPlayer.Volume = 0.1;
+            //_mediaPlayer.Open(new Uri(myTestSong.path));
+            //_mediaPlayer.Volume = 0.1;
+            AudioPlayer.CurrentSong = myTestSong;
+            //AudioPlayer.Play();
 
             PropertyChanged += (sender, args) =>
             {
-                if (args.PropertyName == nameof(IsPlaying))
-                {
-                    if (!_isPlaying)
-                    {
-                        this.PlayButtonSource = "PlayCircleOutline";
-                    }
-                    else
-                    {
-                        this.PlayButtonSource = "PauseCircleOutline";
-                        
-                    }
-
-                    PlaySongFunc(null);
-                }
-
+                
                 if (args.PropertyName == nameof(PlayerVolume))
                 {
                     _mediaPlayer.Volume = PlayerVolume / 100;
@@ -180,7 +169,22 @@ namespace Spotyfi.ViewModel
                 }
             };
 
-           
+
+            AudioPlayer.PausedPlaying += (sender, args) =>
+            {
+                IsPlaying = false;
+                this.PlayButtonSource = "PlayCircleOutline";
+            };
+            AudioPlayer.StartedPlaying += (sender, args) =>
+            {
+                IsPlaying = true;
+                this.PlayButtonSource = "PauseCircleOutline";
+            };
+            AudioPlayer.StoppedPlaying += (sender, args) =>
+            {
+                IsPlaying = false;
+                this.PlayButtonSource = "PauseCircleOutline";
+            };
 
 
 
@@ -193,14 +197,17 @@ namespace Spotyfi.ViewModel
 
         private void PlaySongFunc(object args)
         {
+            MessageBox.Show("PlaySongFunc called");
 
             if (!_isPlaying)
             {
-                _mediaPlayer.Pause();
+                //_mediaPlayer.Pause();
+                AudioPlayer.Pause();
             }
             else
             {
-                _mediaPlayer.Play();
+                //_mediaPlayer.Play();
+                AudioPlayer.Play();
             }
 
 

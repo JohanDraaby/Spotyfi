@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Model\AlbumsToImagePathConverter.cs" />
     <Compile Include="Model\ArtistsToJoinedStringConverter.cs" />
+    <Compile Include="Model\AudioPlayer.cs" />
     <Compile Include="Model\DelegateCommand.cs" />
     <Compile Include="Model\Search.cs" />
     <Compile Include="Properties\Annotations.cs" />
@@ -202,6 +203,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Albums\tunaktuncover.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Songs\ace-hood-bugatti.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Songs\bring-me-to-life-evanescence.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Songs\eminem-without-me.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Songs\kanye-west-power.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Songs\sunflower-post-malone.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Songs\tunak-tunak-tun-dahler-mendi.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SpotyfiDatabase.Context.tt">
