@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -195,7 +196,21 @@ namespace Spotyfi.ViewModel
             AudioPlayer.StoppedPlaying += (sender, args) =>
             {
                 IsPlaying = false;
-                this.PlayButtonSource = "PauseCircleOutline";
+                this.PlayButtonSource = "PlayCircleOutline";
+            };
+            AudioPlayer.EndedPlaying += (sender, args) =>
+            {
+                IsPlaying = false;
+                this.PlayButtonSource = "PlayCircleOutline";
+            };
+
+            AudioPlayer.AudioPlayerSongChanged += (sender, args) =>
+            {
+                song changedSong = args.SongChangedTo;
+
+                CurrentSong = changedSong;
+
+
             };
 
             this.PlayCommand = new DelegateCommand(PlaySongFunc);

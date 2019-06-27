@@ -9,17 +9,26 @@ using System.Windows.Media;
 namespace Spotyfi.Model
 {
 
-    
+    public class AudioPlayerCurrentSongChangedEventArgs : EventArgs
+    {
+        public song SongChangedTo { get; set; }
+
+        public AudioPlayerCurrentSongChangedEventArgs(song songChangedTo)
+        {
+            SongChangedTo = songChangedTo;
+        }
+    }
 
 
     public static class AudioPlayer
     {
+        private static bool _initialized = false;
 
-        public static event EventHandler AudioPlayerSongChanged;
+        public static event EventHandler<AudioPlayerCurrentSongChangedEventArgs> AudioPlayerSongChanged;
         public static event EventHandler StartedPlaying;
         public static event EventHandler StoppedPlaying;
         public static event EventHandler PausedPlaying;
-
+        public static event EventHandler EndedPlaying;
 
         private static readonly MediaPlayer MediaPlayer = new MediaPlayer();
 
@@ -32,24 +41,38 @@ namespace Spotyfi.Model
             {
                 _currentSong = value;
                 MediaPlayer.Open(new Uri(Environment.CurrentDirectory + value.path));
-                AudioPlayerSongChanged?.Invoke(null, EventArgs.Empty);
+                AudioPlayerSongChanged?.Invoke(null, new AudioPlayerCurrentSongChangedEventArgs(value));
             }
+        }
+
+        private static void Initialize()
+        {
+            MediaPlayer.MediaEnded += (sender, args) =>
+            {
+                EndedPlaying?.Invoke(null, EventArgs.Empty);
+            };
         }
 
         public static void Play()
         {
+            if(!_initialized) Initialize();
+
             MediaPlayer.Play();
             StartedPlaying?.Invoke(null, EventArgs.Empty);
         }
 
         public static void Pause()
         {
+            if (!_initialized) Initialize();
+
             MediaPlayer.Pause();
             PausedPlaying?.Invoke(null, EventArgs.Empty);
         }
 
         public static void Stop()
         {
+            if (!_initialized) Initialize();
+
             MediaPlayer.Stop();
             StoppedPlaying?.Invoke(null, EventArgs.Empty);
         }
