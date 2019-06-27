@@ -23,9 +23,6 @@ namespace Spotyfi.Model
 
         private static readonly MediaPlayer MediaPlayer = new MediaPlayer();
 
-
-        
-
         private static song _currentSong;
 
         public static song CurrentSong

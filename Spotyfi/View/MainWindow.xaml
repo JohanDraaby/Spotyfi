@@ -76,7 +76,7 @@
             <Label x:Name="SongNameDisplay" Margin="91,15,534.667,44" Foreground="#DDECECEC" Content="{Binding CurrentSong.name, FallbackValue=Unknown}" FontSize="16"/>
             <Label x:Name="SongArtistDisplay" Margin="91,51,265,15" Foreground="#FFB2B2B2" Content="{Binding CurrentSong.artists, Converter={StaticResource ArtistsToJoinedStringConverter}}"/>
 
-            <Button x:Name="ButtonPlay" Background="{x:Null}" BorderBrush="{x:Null}" Height="54" Width="58" Margin="671,7,30,34" Click="ButtonPlay_Click">
+            <Button x:Name="ButtonPlay" Background="{x:Null}" BorderBrush="{x:Null}" Height="54" Width="58" Margin="671,7,30,34" Click="ButtonPlay_Click" Command="{Binding PlayCommand}">
                 <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Height="54" Width="58" Foreground="#FFB2B2B2" Kind="{Binding PlayButtonSource, FallbackValue=PlayCircleOutline}"/>
             </Button>
             <Button x:Name="ButtonSkipNext" Background="{x:Null}" BorderBrush="{x:Null}" Height="38" Width="40" Margin="738,15,622,42" Grid.ColumnSpan="2">

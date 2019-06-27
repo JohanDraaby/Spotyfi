@@ -19,6 +19,18 @@ namespace Spotyfi.ViewModel
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        private ICommand _playCommand;
+
+        public ICommand PlayCommand
+        {
+            get => _playCommand;
+            set
+            {
+                _playCommand = value;
+                OnPropertyChanged(nameof(PlayCommand));
+            }
+        }
+
 
         private string _mainFrameSource = "/Spotyfi;component/View/FrontPageView.xaml";
 
@@ -186,7 +198,7 @@ namespace Spotyfi.ViewModel
                 this.PlayButtonSource = "PauseCircleOutline";
             };
 
-
+            this.PlayCommand = new DelegateCommand(PlaySongFunc);
 
         }
 
@@ -197,20 +209,15 @@ namespace Spotyfi.ViewModel
 
         private void PlaySongFunc(object args)
         {
-            MessageBox.Show("PlaySongFunc called");
 
-            if (!_isPlaying)
+            if (IsPlaying)
             {
-                //_mediaPlayer.Pause();
                 AudioPlayer.Pause();
             }
             else
             {
-                //_mediaPlayer.Play();
                 AudioPlayer.Play();
             }
-
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

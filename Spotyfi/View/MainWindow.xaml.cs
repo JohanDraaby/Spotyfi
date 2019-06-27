@@ -53,8 +53,8 @@ namespace Spotyfi
         private void ButtonPlay_Click(object sender, RoutedEventArgs e)
         {
             // TODO this feels dirty?
-            var mwvm = (MainWindowViewModel) this.DataContext;
-            mwvm.IsPlaying = !mwvm.IsPlaying;
+            //var mwvm = (MainWindowViewModel) this.DataContext;
+            //mwvm.IsPlaying = !mwvm.IsPlaying;
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
