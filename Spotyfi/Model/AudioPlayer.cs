@@ -30,6 +30,12 @@ namespace Spotyfi.Model
         public static event EventHandler PausedPlaying;
         public static event EventHandler EndedPlaying;
 
+        public static double Volume
+        {
+            get => MediaPlayer.Volume;
+            set => MediaPlayer.Volume = value;
+        }
+
         private static readonly MediaPlayer MediaPlayer = new MediaPlayer();
 
         private static song _currentSong;

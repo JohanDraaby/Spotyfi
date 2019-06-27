@@ -81,6 +81,7 @@ namespace Spotyfi.ViewModel
             set
             {
                 _playerVolume = value;
+                AudioPlayer.Volume = value / 100;
                 OnPropertyChanged(nameof(PlayerVolume));
             }
         }
@@ -209,8 +210,6 @@ namespace Spotyfi.ViewModel
                 song changedSong = args.SongChangedTo;
 
                 CurrentSong = changedSong;
-
-
             };
 
             this.PlayCommand = new DelegateCommand(PlaySongFunc);
