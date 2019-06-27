@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using Spotyfi.Annotations;
 using Spotyfi.Model;
 
@@ -163,6 +164,18 @@ namespace Spotyfi.ViewModel
             AssignRandomAlbums();
             SubscribeToAlbumChanges();
 
+            if (RecentAlbum1.image_path == RecentAlbum2.image_path && RecentAlbum1.image_path == RecentAlbum3.image_path && RecentAlbum1.image_path == RecentAlbum4.image_path)
+            {
+                MessageBox.Show("JackPot!");
+            }
+            if (PopAlbum1.image_path == PopAlbum2.image_path && PopAlbum1.image_path == PopAlbum3.image_path && PopAlbum1.image_path == PopAlbum4.image_path)
+            {
+                MessageBox.Show("JackPot!");
+            }
+            if (ForYouAlbum1.image_path == ForYouAlbum2.image_path && ForYouAlbum1.image_path == ForYouAlbum3.image_path && ForYouAlbum1.image_path == ForYouAlbum4.image_path)
+            {
+                MessageBox.Show("JackPot!");
+            }
 
 
 
@@ -213,6 +226,8 @@ namespace Spotyfi.ViewModel
             ForYouAlbum3.PropertyChanged += (sender, args) => { this.OnPropertyChanged(nameof(RecentAlbum3)); };
             ForYouAlbum4.PropertyChanged += (sender, args) => { this.OnPropertyChanged(nameof(RecentAlbum4)); };
         }
+
+        
 
         public event PropertyChangedEventHandler PropertyChanged;
 

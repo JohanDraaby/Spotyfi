@@ -178,7 +178,7 @@ namespace Spotyfi.ViewModel
                     if (SearchBox == "")
                     {
                         MainFrameSource = "/Spotyfi;component/View/FrontPageView.xaml";
-
+                        
                     }
                 }
             };
