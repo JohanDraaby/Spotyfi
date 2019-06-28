@@ -18,7 +18,7 @@ namespace Spotyfi
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class album : INotifyPropertyChanged
     {
         private int _id;
@@ -58,7 +58,7 @@ namespace Spotyfi
             get => _description;
             set
             {
-                _description = value; 
+                _description = value;
                 OnPropertyChanged(nameof(description));
             }
         }
@@ -69,7 +69,7 @@ namespace Spotyfi
             set
             {
                 var file = Environment.CurrentDirectory + value;
-                if(File.Exists(file))
+                if (File.Exists(file))
                     _imagePath = value;
                 else
                 {
