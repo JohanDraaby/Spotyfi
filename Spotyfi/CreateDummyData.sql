@@ -37,6 +37,7 @@ INSERT INTO `album` (`id`, `name`, `description`, `image_path`) VALUES
 	(5, 'My Beautiful Dark Twisted Fantasy', 'N/A', '/Images/Albums/my-beautiful-dark-twisted-fantasy-cover.jpg'),
 	(6, 'Spider-Man: Into the Spider-Verse', 'N/A', '/Images/Albums/spider-man-into-the-spider-verse-cover.jpg');
 
+
 ##########################album_song########################################################################################
 
 INSERT INTO album_song(album_song.album_id, album_song.song_id) VALUES (1, 1);

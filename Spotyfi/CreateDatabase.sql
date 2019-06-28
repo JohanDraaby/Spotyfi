@@ -20,13 +20,18 @@ CREATE TABLE song
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE album
-(
-	`id` INT AUTO_INCREMENT,
-	`name` VARCHAR(64),
-	`description` VARCHAR(256),
+CREATE TABLE `album` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(64) NULL DEFAULT NULL,
+	`description` VARCHAR(256) NULL DEFAULT NULL,
+	`image_path` VARCHAR(256) NULL DEFAULT NULL,
 	PRIMARY KEY (`id`)
-);
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=7
+;
+
 
 CREATE TABLE artist
 (
